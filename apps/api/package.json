@@ -10,6 +10,7 @@
     "dev": "tsx watch src/index.ts",
     "start": "node dist/src/index.js",
     "test": "npm run build && node --test dist/test/api.test.js",
+    "pretypecheck": "npm --workspace @patchcourt/core run build",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
