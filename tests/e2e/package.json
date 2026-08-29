@@ -7,6 +7,7 @@
     "test": "node run-default-tests.mjs",
     "test:headed": "node run-default-tests.mjs --headed",
     "test:path-contract": "node --test evidence-paths.contract.test.mjs",
+    "test:deployment": "node verify-public-deployment.mjs",
     "evidence:update": "node update-evidence.mjs",
     "test:api-lifecycle": "node api-lifecycle.mjs",
     "test:integration": "playwright test --config playwright.integration.config.mjs",

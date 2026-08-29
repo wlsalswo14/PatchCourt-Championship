@@ -115,6 +115,21 @@ facts digest before both incumbent and candidate arms.
 ## Public deployment
 
 The public GitHub Pages build intentionally ships no credential and runs the
-verified-replay experience. `.github/workflows/pages.yml` verifies the authoritative
-receipt before building and deploying `apps/web/dist`. Live Gemini execution remains
-a server-side operator mode.
+verified-replay experience. The `verify -> build-pages -> deploy-pages` dependency
+chain in `.github/workflows/ci.yml` verifies the authoritative receipts before
+building and deploying `apps/web/dist`. Live Gemini execution remains a server-side
+operator mode.
+
+After deployment, verify the actual public origin (not a local preview):
+
+```powershell
+$env:PATCHCOURT_PUBLIC_URL = "https://wlsalswo14.github.io/PatchCourt-Championship/"
+npm run test:deployment
+```
+
+This runs Chromium at desktop and 390 px mobile widths, exercises promotion and
+rejection surfaces, requires the exact final URL and same-origin-only traffic,
+rejects console/page/network errors and every `/api/` path, and compares deployed
+screenshots with the curated proof by SHA-256. It writes only to ignored
+`tests/e2e/test-results/deployment` artifacts and replaces any previous green report
+with `running`/`failed` state before a new run can be trusted.

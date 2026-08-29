@@ -103,13 +103,13 @@ following one-minute explanation around the actual screens:
 - 38–52s: Open the Champion receipt and verify PC01 40→100, 13/13 gates, provider provenance, and SHA-256 lineage.
 - 52–60s: Open the deliberate rejection: one responsive gate fails, judge invocation remains 0, and the incumbent is retained.
 
-## Proof bundle required before submission
+## Verified proof bundle
 
-- Public deployment URL and health check
-- Clean promotion receipt
-- Clean rejection receipt where the incumbent remains protected
-- Desktop and mobile screenshots for both variants
-- Console, network, DOM, accessibility, and trace evidence
-- Model/provider metadata without credentials
-- Receipt schema validation and tamper test
-- Cold-start 60-second walkthrough
+- [Public deployment URL](https://wlsalswo14.github.io/PatchCourt-Championship/) and [direct-origin browser health check](evidence/deployment/SUMMARY.md)
+- [Clean promotion receipt](evidence/latest/receipt.json) with 122/122 independent verifier checks
+- [Clean rejection receipt](evidence/rejection/receipt.json) with the incumbent retained and 120/120 checks
+- Desktop and mobile screenshots for both variants in the [promotion](evidence/latest/SUMMARY.md) and [rejection](evidence/rejection/SUMMARY.md) bundles
+- Console, network, DOM, accessibility, trace, and full [integration evidence](evidence/integration/SUMMARY.md)
+- Sanitized [live Gemini 3.6 Flash proof](evidence/live/SUMMARY.md) with provider metadata and no credential
+- Receipt schema, payload hash, provenance, arithmetic, and tamper validation in `benchmark/verify-receipt.mjs`
+- Cold-start presenter path in the 60-second walkthrough above

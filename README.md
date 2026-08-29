@@ -1,5 +1,7 @@
 # PatchCourt
 
+[![CI](https://github.com/wlsalswo14/PatchCourt-Championship/actions/workflows/ci.yml/badge.svg)](https://github.com/wlsalswo14/PatchCourt-Championship/actions/workflows/ci.yml)
+
 > AI가 고친 UI를 감으로 배포하지 않습니다. 같은 사용자가 같은 일을 했을 때 더 나은 결과가 나온 패치만, 실제 브라우저 증거로 승격합니다.
 
 [▶ Public verified replay](https://wlsalswo14.github.io/PatchCourt-Championship/) · [60초 시연](docs/SUBMISSION_DRAFT.md#presenter-led-60-second-walkthrough) · [영수증 직접 검증](docs/evidence/latest/receipt.json)
@@ -72,6 +74,8 @@ Live execution is intentionally operator-side. The static public deployment neve
 The rejection is not a decorative error screen: an offscreen mobile action fails `responsive_primary_action`, short-circuits judgment, and keeps the incumbent despite the candidate's otherwise higher score.
 
 The production public build also scores 100/100/100/100 in desktop and mobile Lighthouse lab runs, with zero measured layout overflow and no console or failed-network errors in the browser contract. See the [performance evidence and measurement caveat](docs/evidence/performance/SUMMARY.md).
+
+The deployed GitHub Pages origin was also exercised directly—not through a local preview—at 1440×960 and 390×844. Both public journeys returned HTTP 200, made zero `/api/` requests, produced zero console/page/network errors, preserved zero horizontal overflow, and reached both the promoted receipt and judge-short-circuited rejection. See the [public deployment evidence](docs/evidence/deployment/SUMMARY.md).
 
 ## System map
 
@@ -170,6 +174,7 @@ Model discretion never controls target ownership, task identity, artifact hashes
 - [Rejection evidence](docs/evidence/rejection/SUMMARY.md)
 - [Sanitized live Gemini evidence](docs/evidence/live/SUMMARY.md)
 - [Performance evidence](docs/evidence/performance/SUMMARY.md)
+- [Public deployment evidence](docs/evidence/deployment/SUMMARY.md)
 - [Design fidelity ledger](design/fidelity-ledger.md)
 
 PatchCourt uses only project-owned synthetic data and repository-created assets. No private production data is required.

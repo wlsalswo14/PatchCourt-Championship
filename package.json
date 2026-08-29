@@ -14,6 +14,7 @@
     "build:web": "npm --workspace apps/web run build",
     "test:web": "npm --workspace apps/web run test",
     "test:e2e": "npm --prefix tests/e2e test",
+    "test:deployment": "npm --prefix tests/e2e run test:deployment",
     "evidence:update": "npm --prefix tests/e2e run evidence:update",
     "benchmark:verify": "node benchmark/verify-receipt.mjs docs/evidence/latest/receipt.json",
     "lint:web": "npm --workspace apps/web run lint",

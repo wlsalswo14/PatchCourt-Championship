@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "status": "passed",
+  "startedAt": "2026-08-29T18:39:11.652Z",
+  "checkedAt": "2026-08-29T18:39:14.433Z",
+  "url": "https://wlsalswo14.github.io/PatchCourt-Championship/",
+  "allowedNetworkOrigin": "https://wlsalswo14.github.io",
+  "profiles": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "documentStatus": 200,
+      "finalUrl": "https://wlsalswo14.github.io/PatchCourt-Championship/",
+      "redirectCount": 0,
+      "requestCount": 6,
+      "externalRequestCount": 0,
+      "initialOverflow": 0,
+      "terminalOverflow": 0,
+      "apiRequestCount": 0,
+      "consoleErrorCount": 0,
+      "pageErrorCount": 0,
+      "failedRequestCount": 0,
+      "badResponseCount": 0,
+      "capture": "public-desktop.png",
+      "captureSha256": "9e1ec2a26eb8c293c160bee735cec66f12ca7393b1e837613eb03087bcd7c039",
+      "curatedCapture": "design/final/dashboard-desktop.png",
+      "curatedCaptureSha256": "9e1ec2a26eb8c293c160bee735cec66f12ca7393b1e837613eb03087bcd7c039",
+      "captureMatchesCurated": true,
+      "promotionVerified": true,
+      "rejectionVerified": true
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "documentStatus": 200,
+      "finalUrl": "https://wlsalswo14.github.io/PatchCourt-Championship/",
+      "redirectCount": 0,
+      "requestCount": 6,
+      "externalRequestCount": 0,
+      "initialOverflow": 0,
+      "terminalOverflow": 0,
+      "apiRequestCount": 0,
+      "consoleErrorCount": 0,
+      "pageErrorCount": 0,
+      "failedRequestCount": 0,
+      "badResponseCount": 0,
+      "capture": "public-mobile.png",
+      "captureSha256": "4bd2da63b09d6f8c3d40f5acb498c07a541bacd9812a5305ee07e8ce710ac915",
+      "curatedCapture": "design/final/dashboard-mobile.png",
+      "curatedCaptureSha256": "4bd2da63b09d6f8c3d40f5acb498c07a541bacd9812a5305ee07e8ce710ac915",
+      "captureMatchesCurated": true,
+      "promotionVerified": true,
+      "rejectionVerified": true
+    }
+  ]
+}
