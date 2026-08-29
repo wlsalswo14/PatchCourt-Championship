@@ -1,0 +1,10 @@
+/*
+ * Deliberately rejected local-only candidate used to prove incumbent protection.
+ * It changes presentation only, makes no request, and is never a production fix.
+ */
+@media (max-width: 480px) {
+  body[data-variant="candidate"] [data-testid="prepare-offer"] {
+    width: 430px !important;
+    max-width: none !important;
+  }
+}

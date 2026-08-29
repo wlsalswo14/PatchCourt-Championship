@@ -1,0 +1,24 @@
+{
+  "name": "patchcourt-championship",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "demo/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace apps/web run dev",
+    "dev:api": "npm --workspace apps/api run dev",
+    "demo:start": "npm --workspace @patchcourt/brand-match-demo start",
+    "build:web": "npm --workspace apps/web run build",
+    "test:web": "npm --workspace apps/web run test",
+    "test:e2e": "npm --prefix tests/e2e test",
+    "evidence:update": "npm --prefix tests/e2e run evidence:update",
+    "benchmark:verify": "node benchmark/verify-receipt.mjs docs/evidence/latest/receipt.json",
+    "lint:web": "npm --workspace apps/web run lint",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  }
+}

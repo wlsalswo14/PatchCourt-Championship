@@ -1,0 +1,310 @@
+{
+  "designRationale": {
+    "visualConcept": "Digital evidence docket meets contemporary Korean editorial design. Emphasizes authoritative, legal-grade typography, ruled margin annotations, crisp open rails, and structured visual evidence sheets instead of generic rounded bento card grids.",
+    "artDirection": "Paper-white neutral background with high-contrast deep ink text, accented by hot vermilion for prosecution claims, restrained cobalt for defense counter-arguments, and earned emerald green strictly reserved for verified champion states.",
+    "hierarchyStrategy": "Primary emphasis on live browser DOM/screenshot frame and pin points, secondary emphasis on AI prosecutor/defender citations, tertiary emphasis on gate outcomes (`통과`, `실패`, `측정 대기`). Made-up numeric quality scores are strictly banned."
+  },
+  "designSystem": {
+    "colorTokens": {
+      "bgCanvas": "#F8F9FA",
+      "bgSurface": "#FFFFFF",
+      "bgSubtle": "#F3F4F6",
+      "textPrimary": "#111827",
+      "textSecondary": "#4B5563",
+      "textMuted": "#9CA3AF",
+      "borderSubtle": "#E5E7EB",
+      "borderStrong": "#111827",
+      "accentProsecution": "#DC2626",
+      "accentDefense": "#2563EB",
+      "accentJudge": "#059669",
+      "accentJudgeBg": "#ECFDF5",
+      "accentProsecutionBg": "#FEF2F2",
+      "accentDefenseBg": "#EFF6FF"
+    },
+    "typography": {
+      "fontFamilySans": "'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+      "fontFamilyMono": "'JetBrains Mono', 'Cascadia Code', monospace",
+      "fontSizeScale": {
+        "xs": "11px",
+        "sm": "13px",
+        "base": "14px",
+        "md": "16px",
+        "lg": "18px",
+        "xl": "24px",
+        "2xl": "32px",
+        "3xl": "40px"
+      },
+      "lineHeight": {
+        "tight": "1.2",
+        "snug": "1.35",
+        "normal": "1.5"
+      },
+      "numericVariant": "tabular-nums"
+    },
+    "spacing": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "2xl": "48px"
+    },
+    "radii": {
+      "sharp": "0px",
+      "subtle": "2px",
+      "control": "4px",
+      "badge": "9999px"
+    },
+    "borders": {
+      "thin": "1px solid #E5E7EB",
+      "ruled": "1px solid #111827",
+      "prosecution": "1.5px solid #DC2626",
+      "defense": "1.5px solid #2563EB"
+    },
+    "shadows": {
+      "none": "none",
+      "docket": "0 1px 3px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.02)",
+      "overlay": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+    },
+    "motion": {
+      "transitionFast": "150ms cubic-bezier(0.16, 1, 0.3, 1)",
+      "transitionNormal": "250ms cubic-bezier(0.16, 1, 0.3, 1)",
+      "transitionStage": "400ms cubic-bezier(0.16, 1, 0.3, 1)"
+    },
+    "containerWidths": {
+      "desktop": "1440px",
+      "mobile": "390px"
+    },
+    "iconRules": "Clean 1.5px outline style. No emojis, no filled decorative 3D icons, no arrow glyphs inside text."
+  },
+  "copyInventory": {
+    "brand": "PATCHCOURT",
+    "primaryNav": {
+      "trial": "재판",
+      "evidence": "증거",
+      "comparison": "비교",
+      "receipt": "영수증"
+    },
+    "workspaceLabel": "BU01 / 브랜드-크리에이터 제안 여정",
+    "dashboard": {
+      "heading": "좋아졌다는 말 대신, 증거를 남깁니다.",
+      "subtext": "같은 사용자 여정을 다시 실행하고, 회귀가 없을 때만 패치를 승격합니다.",
+      "urlLabel": "검증할 주소",
+      "urlValue": "http://localhost:4174",
+      "missionLabel": "사용자 미션",
+      "missionValue": "브랜드로 로그인하고 US 크리에이터 John Smith를 검토한 뒤 제안 금액을 수정해 전송 준비 상태로 만드세요.",
+      "mainCta": "증거 재판 시작",
+      "secondaryCta": "60초 데모 재생",
+      "liveTitle": "실시간 재판 기록",
+      "railStages": [
+        "캡처",
+        "재현",
+        "변론",
+        "패치",
+        "재심",
+        "승격"
+      ]
+    },
+    "court": {
+      "heading": "결함은 주장으로 채택되기 전에 증명되어야 합니다.",
+      "prosecutor": "검사 AI",
+      "defender": "변호 AI",
+      "judge": "판결 엔진",
+      "verdict": "원시 OAuth 식별자가 노출되고, 제안 판단에 필요한 신뢰 근거가 비어 있음",
+      "evidenceRefs": [
+        "증거 E-01",
+        "증거 E-02",
+        "증거 E-03"
+      ]
+    },
+    "comparison": {
+      "heading": "같은 여정에서 더 나은 쪽을 먼저 고릅니다.",
+      "revealCta": "패치 정체 공개",
+      "variantA": "변종 A",
+      "variantB": "변종 B"
+    },
+    "receipt": {
+      "heading": "CHAMPION",
+      "subtext": "이 패치는 같은 여정을 통과했고, 새로운 회귀를 만들지 않았습니다.",
+      "copyAction": "영수증 복사",
+      "downloadAction": "JSON 내려받기",
+      "retryAction": "다시 재판하기"
+    },
+    "gates": {
+      "taskCompletion": "과업 완수",
+      "trustEvidence": "신뢰 근거",
+      "accessibility": "접근성",
+      "privacy": "개인정보",
+      "regression": "회귀"
+    },
+    "gateStatuses": {
+      "pass": "통과",
+      "fail": "실패",
+      "pending": "측정 대기"
+    }
+  },
+  "screenSpecs": {
+    "dashboard": {
+      "geometry": "1440px x 960px",
+      "layout": "Top navigation bar (64px height) -> Sub-header with Workspace label & Run Rail -> Split viewport: Left Configuration Panel (400px), Right Live Evidence Log stream (976px).",
+      "hierarchy": "1. Main Heading & Mission Configuration panel, 2. Run Rail progress indicator, 3. Live evidence stream.",
+      "states": [
+        "IDLE",
+        "RUNNING",
+        "COMPLETED",
+        "FAILED"
+      ],
+      "responsiveRules": "Stack to single column under 1024px width.",
+      "interactionNotes": "Clicking '60초 데모 재생' triggers full deterministic timeline execution across all 6 rail stages."
+    },
+    "court": {
+      "geometry": "1440px x 960px",
+      "layout": "Header with Court Heading & Verdict Bar -> Left Column: Frame Inspector (800px) with interactive Pin overlay -> Right Column: Docket Sheet (576px) containing Prosecution, Defense, and Judge Verdict panels.",
+      "hierarchy": "1. Failing Browser Screenshot with interactive Pin markers, 2. Prosecution argument citing Pin IDs, 3. Defense response, 4. Judge summary.",
+      "states": [
+        "EVIDENCE_INSPECT",
+        "PIN_HOVERED",
+        "ARGUMENT_EXPANDED"
+      ],
+      "responsiveRules": "Frame Inspector stacks above Docket Sheet under 1024px.",
+      "interactionNotes": "Hovering over Pin E-01 highlights matching citation line in Prosecution transcript."
+    },
+    "comparison": {
+      "geometry": "1440px x 960px",
+      "layout": "Header with Comparison Heading -> Dual Blind Frame Grid (Variant A vs Variant B) -> Per-Gate Matrix panel below -> Bottom Floating CTA '패치 정체 공개'.",
+      "hierarchy": "1. Blind Variant side-by-side frames, 2. Blind Gate checklist, 3. Reveal action button.",
+      "states": [
+        "BLIND_UNREVEALED",
+        "REVEALED_CHAMPION"
+      ],
+      "responsiveRules": "Side-by-side frames turn into tabbed view on mobile viewports.",
+      "interactionNotes": "Before reveal, variants are labelled strictly '변종 A' and '변종 B'. Clicking reveal highlights the patched version in emerald green."
+    },
+    "receipt": {
+      "geometry": "1440px x 960px",
+      "layout": "Centered Certificate Docket Frame (680px max width) on cool-neutral background. Contains Champion Seal header, Hash digest, Gate Matrix, Source Commit reference, and Action Toolbar.",
+      "hierarchy": "1. CHAMPION Header & Seal, 2. Verified Gate Results, 3. Hash & Commit Lineage, 4. Copy/Download Actions.",
+      "states": [
+        "DEFAULT",
+        "COPIED_TO_CLIPBOARD"
+      ],
+      "responsiveRules": "Full width with 16px lateral padding on mobile.",
+      "interactionNotes": "'영수증 복사' copies canonical JSON string to clipboard and shows toast notification."
+    },
+    "mobile": {
+      "geometry": "390px x 844px",
+      "layout": "Single-column fluid layout with sticky top context bar showing Workspace ID and Stage badge, view toggle tabs (재판/증거/비교/영수증), collapsible detail panels.",
+      "hierarchy": "1. Active Stage Banner, 2. Primary Evidence Frame / Verdict, 3. Collapsible Arguments & Gates.",
+      "states": [
+        "MOBILE_RUNNING",
+        "MOBILE_EVIDENCE",
+        "MOBILE_RECEIPT"
+      ],
+      "responsiveRules": "Minimum 44px tap targets for all controls. Secondary logs collapsed by default.",
+      "interactionNotes": "Horizontal swipe between Evidence Pin items."
+    }
+  },
+  "componentFamilies": {
+    "RunRail": {
+      "description": "6-stage horizontal progress rail with numeric step indicators and state badges.",
+      "variants": [
+        "idle",
+        "active",
+        "passed",
+        "failed"
+      ]
+    },
+    "EvidenceSheet": {
+      "description": "Ruled paper-style docket container for legal-formatted transcripts.",
+      "variants": [
+        "prosecution",
+        "defense",
+        "judgeVerdict"
+      ]
+    },
+    "FrameInspector": {
+      "description": "Browser viewport simulator with DOM pinpoint overlays.",
+      "variants": [
+        "failingBefore",
+        "passingAfter"
+      ]
+    },
+    "GateBadge": {
+      "description": "Deterministic status badge with explicit copy.",
+      "variants": [
+        "통과",
+        "실패",
+        "측정 대기"
+      ]
+    },
+    "ChampionSeal": {
+      "description": "Immutable receipt stamp displaying execution timestamp and SHA-256 hash.",
+      "variants": [
+        "default"
+      ]
+    }
+  },
+  "workflow": {
+    "timeline": [
+      {
+        "timestamp": "0s",
+        "stage": "캡처",
+        "action": "User clicks '60초 데모 재생'. Browser agent loads target http://localhost:4174 for BU01 mission."
+      },
+      {
+        "timestamp": "10s",
+        "stage": "재현",
+        "action": "Agent replays path: Login -> Creator Directory -> Filter US -> Select John Smith."
+      },
+      {
+        "timestamp": "20s",
+        "stage": "변론",
+        "action": "Prosecutor cites E-01 (raw OAuth id exposed) & E-02 (0 followers / TBD). Defender accepts raw ID defect."
+      },
+      {
+        "timestamp": "35s",
+        "stage": "패치",
+        "action": "System applies single atomic patch: masks OAuth ID, injects trust metrics, ensures mobile action clearance."
+      },
+      {
+        "timestamp": "45s",
+        "stage": "재심",
+        "action": "Replay exact mission on patched code. Blind comparison evaluates Variant A vs Variant B."
+      },
+      {
+        "timestamp": "60s",
+        "stage": "승격",
+        "action": "All gates pass ('통과'). Patch promoted to CHAMPION status. Immutable signed receipt generated."
+      }
+    ]
+  },
+  "accessibility": {
+    "wcagContrast": "AA compliant across all text tokens (minimum 4.5:1 for normal text, 3:1 for large text).",
+    "focusStyle": "Visible 2px solid #111827 outline with 2px offset.",
+    "keyboardNavigation": "Full tab ordering across primary navigation tabs, CTA buttons, and evidence pin triggers.",
+    "touchTargetSize": "Minimum 44px x 44px on all interactive controls.",
+    "reducedMotion": "Disables stage transition slide effects and pin pulsers when prefers-reduced-motion is active."
+  },
+  "acceptanceChecklist": [
+    "1. Brand name 'PATCHCOURT' displayed accurately.",
+    "2. Workspace label 'BU01 / 브랜드-크리에이터 제안 여정' clearly visible.",
+    "3. Primary CTA '증거 재판 시작' present.",
+    "4. Secondary CTA '60초 데모 재생' triggers automated demo flow.",
+    "5. Live log shows exact candidate URL 'http://localhost:4174'.",
+    "6. Exact mission text rendered accurately.",
+    "7. Six distinct stage names displayed in order on Run Rail.",
+    "8. Pin E-01 highlights raw OAuth ID defect in Court view.",
+    "9. Pin E-02 highlights missing trust evidence defect.",
+    "10. Prosecutor AI argument uses vermilion accent style.",
+    "11. Defender AI response uses cobalt accent style.",
+    "12. Gate labels match specified Korean copy exactly.",
+    "13. Gate statuses use only '통과', '실패', or '측정 대기'.",
+    "14. No arbitrary numeric scores appear anywhere in UI.",
+    "15. Blind comparison hides variant identities until reveal button is clicked.",
+    "16. Reveal action highlights patched version as CHAMPION.",
+    "17. Champion receipt displays immutable receipt hash digest.",
+    "18. Action '영수증 복사' copies JSON payload.",
+    "19. Mobile view (390x844) preserves core verdict and pass/fail statuses.",
+    "20. Interface uses editorial docket aesthetic with ruled borders and paper-white canvas."
+  ]
+}

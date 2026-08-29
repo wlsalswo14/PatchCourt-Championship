@@ -1,0 +1,25 @@
+{
+  "primaryControls": {
+    "home": "Creator Match home",
+    "offerMessage": "Message",
+    "offerAmount": "Fee (USD)",
+    "prepareDraft": "Prepare draft — do not send"
+  },
+  "allResolved": true,
+  "focusAfterPrepare": {
+    "activeTestId": "draft-status",
+    "skipLinkFocused": false,
+    "skipLinkTop": -1201,
+    "skipLinkBottom": -1200
+  },
+  "primaryAction": {
+    "width": 324,
+    "height": 44,
+    "peerControlWidth": 324
+  },
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "horizontalOverflowPixels": 0
+}

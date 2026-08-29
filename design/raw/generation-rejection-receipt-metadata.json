@@ -1,0 +1,12 @@
+{
+  "model": "models/gemini-3.6-flash",
+  "mode": "canonical-rejection-receipt",
+  "startedAt": "2026-08-29T16:06:25.016Z",
+  "finishedAt": "2026-08-29T16:06:35.461Z",
+  "durationMs": 10445,
+  "requestCharacters": 1598,
+  "responseCharacters": 4141,
+  "finishReason": "STOP",
+  "outputFile": "../rejection-receipt.json",
+  "attemptCount": 1
+}

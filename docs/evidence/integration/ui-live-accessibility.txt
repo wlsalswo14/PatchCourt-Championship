@@ -1,0 +1,99 @@
+- link "본문으로 건너뛰기":
+  - /url: "#main-content"
+- banner:
+  - button "PATCHCOURT"
+  - text: 실시간 재판 receipt-576ed3afc9820aacf3e7b125
+  - navigation "주요 화면":
+    - button "재판"
+    - button "증거"
+    - button "비교"
+    - button "영수증"
+- strong: PC01
+- text: 브랜드-크리에이터 제안 여정 TARGET
+- code: 127.0.0.1:65338
+- progressbar "재판 진행 단계":
+  - list:
+    - listitem: 01 캡처
+    - listitem: 02 재현
+    - listitem: 03 변론
+    - listitem: 04 패치
+    - listitem: 05 재심
+    - listitem: 06 승격
+- main:
+  - article "CHAMPION":
+    - text: PATCHCOURT · VERIFIED PROMOTION
+    - heading "CHAMPION" [level=1]
+    - paragraph: 이 패치는 같은 여정을 통과했고, 새로운 회귀를 만들지 않았습니다.
+    - text: OBSERVED OUTCOME
+    - strong: 40 → 100
+    - text: 실제 PC01 리플레이
+    - region "판결 요약":
+      - text: MISSION
+      - strong: PC01 · creator discovery to safe offer draft
+      - text: VERDICT
+      - strong: 후보 패치 승격
+      - text: CRITICAL GATES
+      - strong: 13 / 13 통과
+      - text: BLIND WINNER
+      - strong: 변종 A
+    - text: EXECUTION PROVENANCE
+    - strong: LIVE API · OFFLINE-DEMO REFERENCE
+    - text: critic patchcourt:three-role-metric-critics-v1 · patch patchcourt:prebuilt-reference-candidate-v1 · judge patchcourt:paired-outcome-v1 critic 제안 3 · 채택 3 · 기각 0 DIRECT VALIDATION · 1 CALL · NO REPAIR · PROOF af2dbff091…b99440b4
+    - region "모든 임계 계약이 증거에 묶였습니다.":
+      - text: DETERMINISTIC RECORD
+      - heading "모든 임계 계약이 증거에 묶였습니다." [level=2]
+      - text: "01"
+      - strong: 소유한 로컬 대상
+      - text: 통과 02
+      - strong: 동일 과업 지문
+      - text: 통과 03
+      - strong: 브랜드 데모 로그인
+      - text: 통과 04
+      - strong: US 디렉터리 검색
+      - text: 통과 05
+      - strong: John Smith 프로필
+      - text: 통과 06
+      - strong: 판단 근거 완결성
+      - text: 통과 07
+      - strong: 제안 필드 편집
+      - text: 통과 08
+      - strong: 미전송 초안 안전성
+      - text: 통과 09
+      - strong: 내부 식별자 비노출
+      - text: 통과 10
+      - strong: 주요 컨트롤 접근성
+      - text: 통과 11
+      - strong: 모바일 주요 액션
+      - text: 통과 12
+      - strong: 콘솔·네트워크 무결성
+      - text: 통과 13
+      - strong: 증거 해시 무결성
+      - text: 통과
+    - region "영수증 계보와 해시":
+      - text: RECEIPT ID
+      - code: receipt-576ed3afc9820aacf3e7b125
+      - text: TASK FINGERPRINT
+      - code: 49b3dd5a1edf7a6b…dffa87a352ef
+      - text: INCUMBENT SOURCE
+      - code: 160a425a3cbce740…4d3abd3ae338
+      - text: CANDIDATE SOURCE
+      - code: 6ef55295ca29af27…caeb4196af3a
+      - text: PATCH DIGEST
+      - code: e88b51327be3135c…585374cab9b4
+      - text: FACTS PACKET
+      - code: c1fc28e2027abda3…099c1787fb90
+      - text: CRITIC PROVENANCE
+      - code: e59a2c56ff1abe95…6aba60e180d5
+      - text: ACCEPTED CRITICS
+      - code: 8247f87e54c932f9…8a2e9484ac30
+      - text: JUDGE VALIDATION
+      - code: af2dbff091244021…c082b99440b4
+      - text: PAYLOAD SHA-256
+      - code: 8c1f78478f4392e00a9aea36586fbda48a5cd57b91bcf610cb27f05cf8b5e60a
+    - text: ISSUED AT
+    - strong: 2026. 8. 30. 오전 2:47:32
+    - text: sha256-canonical-json-v1
+    - button "영수증 복사"
+    - button "JSON 내려받기"
+    - button "다시 재판하기"
+    - status

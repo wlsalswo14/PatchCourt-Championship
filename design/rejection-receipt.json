@@ -1,0 +1,128 @@
+{
+  "verdict": "REJECT",
+  "visualDeltaFromChampion": "Replaces the champion green header and banner elements with a 1px solid prosecution vermilion (#DC2626) top border and status badge. All metric badges are styled with #DC2626 text on a #FEF2F2 background instead of green accents.",
+  "exactKoreanCopy": {
+    "headerTitle": "패치 심의 결과: 기각 (Candidate Rejected)",
+    "statusBanner": "후보 패치가 기각되었으며, 기존 버전(Incumbent)이 유지됩니다.",
+    "shortCircuitNotice": "결정적 안전 게이트 검증 실패로 인해 모델 판정(Model Judge)이 호출되지 않고 조기 종료(Short-circuit)되었습니다."
+  },
+  "hero": {
+    "backgroundColor": "#F8F9FA",
+    "borderColor": "#DC2626",
+    "borderWidth": "1px",
+    "borderRadius": "2px",
+    "badgeText": "REJECTED / INCUMBENT RETAINED",
+    "badgeTextColor": "#DC2626",
+    "badgeBgColor": "#FEF2F2"
+  },
+  "summaryFields": [
+    {
+      "label": "Receipt ID",
+      "value": "<RECEIPT_ID>",
+      "font": "JetBrains Mono"
+    },
+    {
+      "label": "Task Fingerprint",
+      "value": "<TASK_FINGERPRINT>",
+      "font": "JetBrains Mono"
+    },
+    {
+      "label": "Decision",
+      "value": "reject",
+      "font": "Pretendard"
+    },
+    {
+      "label": "Retained Target",
+      "value": "incumbent",
+      "font": "Pretendard"
+    }
+  ],
+  "failedGateTreatment": {
+    "containerStyle": "1px solid #DC2626 border, 0px border-radius, #FFFFFF background, 16px padding",
+    "titleText": "FAILED CRITICAL GATES",
+    "titleColor": "#DC2626",
+    "gateRowFormat": {
+      "gateIdFont": "JetBrains Mono, bold, #111827",
+      "observationFont": "Pretendard, regular, #111827",
+      "observationBg": "#F8F9FA",
+      "observationBorder": "1px solid #E5E7EB"
+    },
+    "placeholderStructure": {
+      "gateId": "<FAILED_GATE_ID>",
+      "observation": "<FAILED_GATE_OBSERVATION>"
+    }
+  },
+  "blindShortCircuitTreatment": {
+    "status": "invalid",
+    "invocationCount": 0,
+    "invalidReason": "not_called:critical_gate_failed:<gate>",
+    "explanationText": "Deterministic safety gates failed prior to blind comparison. Model judge invocation count: 0.",
+    "containerStyle": "1px ruled border #E5E7EB, 12px padding, typography Pretendard 14px #111827, background #F8F9FA"
+  },
+  "lineageRows": [
+    {
+      "label": "Incumbent SHA-256",
+      "value": "<INCUMBENT_SHA256>"
+    },
+    {
+      "label": "Candidate SHA-256",
+      "value": "<CANDIDATE_SHA256>"
+    },
+    {
+      "label": "Patch SHA-256",
+      "value": "<PATCH_SHA256>"
+    },
+    {
+      "label": "Facts SHA-256",
+      "value": "<FACTS_SHA256>"
+    },
+    {
+      "label": "Payload SHA-256",
+      "value": "<PAYLOAD_SHA256>"
+    },
+    {
+      "label": "Execution Provenance",
+      "value": "<EXECUTION_PROVENANCE_ID>"
+    }
+  ],
+  "actions": [
+    {
+      "id": "copy_receipt",
+      "label": "복사 (Copy Receipt JSON)",
+      "minTargetHeight": "44px",
+      "style": "1px solid #111827 border, #111827 text, #FFFFFF background, 2px radius"
+    },
+    {
+      "id": "download_receipt",
+      "label": "다운로드 (Download Receipt)",
+      "minTargetHeight": "44px",
+      "style": "1px solid #111827 border, #FFFFFF text, #111827 background, 2px radius"
+    },
+    {
+      "id": "retry_run",
+      "label": "재시도 (Retry Run)",
+      "minTargetHeight": "44px",
+      "style": "1px solid #2563EB border, #2563EB text, #FFFFFF background, 2px radius"
+    }
+  ],
+  "mobileRules": {
+    "viewport": "390x844",
+    "maxContentWidth": "100%",
+    "overflowX": "none",
+    "touchTargetMin": "44px",
+    "hashTruncation": "ellipsis or wrap on break-all for JetBrains Mono lineage strings"
+  },
+  "accessibilityChecks": {
+    "colorContrastRatio": "Minimum 4.5:1 for #DC2626 on #FEF2F2 and #111827 on #F8F9FA",
+    "screenReaderAnnouncement": "Rejection receipt loaded. Candidate rejected. Incumbent retained. Critical gates failed.",
+    "focusIndicators": "2px solid #2563EB focus ring on all active buttons"
+  },
+  "acceptanceChecklist": [
+    "No champion green (#10B981 / #059669) rendered anywhere in this state.",
+    "Incumbent explicitly marked as retained.",
+    "Candidate explicitly marked as rejected.",
+    "Short-circuit reason displays exact invalidReason string format.",
+    "Lineage hashes use JetBrains Mono font.",
+    "All tap targets measure at least 44px in height."
+  ]
+}

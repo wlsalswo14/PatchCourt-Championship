@@ -1,0 +1,13 @@
+{
+  "model": "models/gemini-3.6-flash",
+  "mode": "spec",
+  "startedAt": "2026-08-29T15:07:07.373Z",
+  "finishedAt": "2026-08-29T15:07:39.655Z",
+  "durationMs": 32282,
+  "requestCharacters": 7943,
+  "responseCharacters": 11640,
+  "finishReason": "STOP",
+  "promptTokens": 1933,
+  "outputTokens": 3700,
+  "outputFile": "gemini-3.6-flash-design-spec.json"
+}

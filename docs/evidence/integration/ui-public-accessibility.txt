@@ -1,0 +1,53 @@
+- link "본문으로 건너뛰기":
+  - /url: "#main-content"
+- banner:
+  - button "PATCHCOURT"
+  - text: 검증된 리플레이 receipt-pc01-20260829165215
+  - navigation "주요 화면":
+    - button "재판"
+    - button "증거"
+    - button "비교"
+    - button "영수증"
+- strong: PC01
+- text: 브랜드-크리에이터 제안 여정 TARGET
+- code: 127.0.0.1:65338
+- progressbar "재판 진행 단계":
+  - list:
+    - listitem: 01 캡처
+    - listitem: 02 재현
+    - listitem: 03 변론
+    - listitem: 04 패치
+    - listitem: 05 재심
+    - listitem: 06 승격
+- main:
+  - region "좋아졌다는 말 대신, 증거를 남깁니다.":
+    - heading "좋아졌다는 말 대신, 증거를 남깁니다." [level=1]
+    - paragraph: 같은 사용자 여정을 다시 실행하고, 회귀가 없을 때만 패치를 승격합니다.
+    - text: FROZEN TASK
+    - strong: PC01 · v1
+    - text: 검증할 주소
+    - textbox "검증할 주소": http://127.0.0.1:65338
+    - text: 사용자 미션
+    - textbox "사용자 미션": 브랜드 데모로 로그인하고 Creator Directory에서 US를 검색해 John Smith의 신뢰 근거를 판단한 뒤, 제안 금액을 $1,500로 바꾸고 전송하지 않은 초안을 준비하세요.
+    - group: API에 전송되는 동결 원문
+    - button "라이브 API 연결 시 사용" [disabled]
+    - button "60초 데모 시나리오 압축 재생"
+    - button "검증된 기각 계보 보기 · 인컴번트 유지 사례"
+    - status: "공개 데모: 네트워크 요청 없이 CI-검증 PC01 리플레이를 사용합니다."
+  - region "실시간 재판 기록":
+    - text: APPEND-ONLY LEDGER
+    - heading "실시간 재판 기록" [level=2]
+    - strong: "24"
+    - text: 검증된 증거
+    - list:
+      - listitem:
+        - time: 00:00
+        - text: "01"
+        - strong: 캡처
+        - paragraph: 동결된 PC01 소스와 과업 지문을 봉인했습니다.
+    - text: 실행 모드
+    - strong: RECORDED VERIFIED REPLAY
+    - text: 후보 임계 게이트
+    - strong: 13 / 13 PASS
+    - text: 영수증 무결성
+    - strong: SHA-256 BOUND

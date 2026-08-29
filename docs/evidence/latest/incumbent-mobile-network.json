@@ -1,0 +1,36 @@
+{
+  "requests": [
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:42873",
+      "path": "/incumbent"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:42873",
+      "path": "/assets/styles.css"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:42873",
+      "path": "/assets/app.js"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:42873",
+      "path": "/__patchcourt/data.json"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:42873",
+      "path": "/__patchcourt/manifest.json"
+    },
+    {
+      "method": "GET",
+      "origin": "http://127.0.0.1:42873",
+      "path": "/assets/avatar.svg"
+    }
+  ],
+  "externalRequests": [],
+  "effectRequests": []
+}

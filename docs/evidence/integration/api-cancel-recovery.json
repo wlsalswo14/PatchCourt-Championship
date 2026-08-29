@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-29T17:24:05.362Z",
+  "boundary": {
+    "syntheticOwnedFixture": true,
+    "loopbackOnly": true,
+    "externalEffects": false,
+    "privateData": false
+  },
+  "freshServers": {
+    "demo": {
+      "pid": 5852,
+      "startedAt": "2026-08-29T17:24:03.969Z",
+      "origin": "http://127.0.0.1:59083"
+    },
+    "gatedTarget": {
+      "pid": 3052,
+      "startedAt": "2026-08-29T17:24:04.235Z",
+      "origin": "http://127.0.0.1:59084"
+    },
+    "apiInitial": {
+      "pid": 4308,
+      "startedAt": "2026-08-29T17:24:04.259Z",
+      "origin": "http://127.0.0.1:59085"
+    },
+    "apiRecovered": {
+      "pid": 27004,
+      "startedAt": "2026-08-29T17:24:04.865Z",
+      "origin": "http://127.0.0.1:59085"
+    },
+    "runtimeRootKind": "owned-os-temp"
+  },
+  "manifest": {
+    "taskFingerprint": "49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef",
+    "sourceSnapshotDigest": "160a425a3cbce74035a86408c76559cd4653283f7e29a1f84cf34d3abd3ae338",
+    "candidateSnapshotDigest": "6ef55295ca29af27bb02111cca3e5d30c1a57995967396250ac3caeb4196af3a",
+    "patchDigest": "e88b51327be3135c234d67496899d7d854c7520831dbc465a17b585374cab9b4",
+    "factsSha256": "c1fc28e2027abda3b717cc971f3865d0e6686ea9b82c9b38bcbd099c1787fb90"
+  },
+  "synchronization": {
+    "strategy": "second-manifest snapshot gate",
+    "manifestRequestCount": 3,
+    "cancelIssuedWhileSnapshotBlocked": true,
+    "snapshotReleasedAfterCancelPersisted": true
+  },
+  "run": {
+    "id": "pc01-a12d3a95-f6ff-473e-b798-0ddfac076378",
+    "status": "invalid",
+    "failureCode": "cancelled_by_user",
+    "cancellationRequested": true,
+    "receiptId": "receipt_1566ba641fbda2dbb26b",
+    "receiptLedgerHead": "1566ba641fbda2dbb26bb54762101ea0258e76c3d4e0bdf79f78766e83e9939a",
+    "stateProjectionSha256": "46bf37f1d5d478cd2ebc253006ee64f6e1d66f99779e3359881729a3467cd5ff"
+  },
+  "sse": {
+    "initialEventNames": [
+      "message",
+      "run_created",
+      "stage_started",
+      "run_terminal",
+      "stage_completed",
+      "stage_completed",
+      "receipt_ready"
+    ],
+    "recoveryEventNames": [
+      "message",
+      "run_created",
+      "stage_started",
+      "run_terminal",
+      "stage_completed",
+      "stage_completed",
+      "receipt_ready"
+    ],
+    "terminalReceiptReady": true
+  },
+  "assertions": {
+    "terminalCancelProtectedIncumbent": true,
+    "lateExecutionDidNotOverwriteCancel": true,
+    "restartRecoveredExactProjection": true,
+    "terminalSseReplayAfterRestart": true,
+    "factsDigestCheckedBeforeRun": true,
+    "cancellationRaceDeterministicallyGated": true
+  }
+}

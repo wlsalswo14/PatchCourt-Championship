@@ -1,0 +1,917 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "receipt-c0d8437976edc53be8c48bf8",
+  "runId": "pc01-edaaca75-c913-4a20-8885-4b58e87163fe",
+  "benchmarkId": "PC01",
+  "appId": "patchcourt-brand-match",
+  "taskFingerprint": "49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef",
+  "createdAt": "2026-08-29T16:49:20.001Z",
+  "execution": {
+    "mode": "live-gemini",
+    "criticProvider": "patchcourt:three-role-metric-critics-v1+google:three-role-grounded-court",
+    "patchProvider": "google:value-only-isolated-candidate",
+    "judgeProvider": "google:blinded-multimodal-pairwise",
+    "model": "gemini-3.6-flash"
+  },
+  "criticProvenance": {
+    "entries": [
+      {
+        "criticId": "deterministic-accessibility-critic-v1",
+        "proposedCount": 1,
+        "acceptedCount": 1,
+        "rejectedCount": 0
+      },
+      {
+        "criticId": "deterministic-decision-evidence-critic-v1",
+        "proposedCount": 1,
+        "acceptedCount": 1,
+        "rejectedCount": 0
+      },
+      {
+        "criticId": "deterministic-privacy-critic-v1",
+        "proposedCount": 1,
+        "acceptedCount": 1,
+        "rejectedCount": 0
+      },
+      {
+        "criticId": "gemini-accessibility-privacy-critic:gemini-3.6-flash",
+        "proposedCount": 2,
+        "acceptedCount": 0,
+        "rejectedCount": 2
+      },
+      {
+        "criticId": "gemini-adversarial-regression-critic:gemini-3.6-flash",
+        "proposedCount": 3,
+        "acceptedCount": 3,
+        "rejectedCount": 0
+      },
+      {
+        "criticId": "gemini-task-outcome-design-critic:gemini-3.6-flash",
+        "proposedCount": 1,
+        "acceptedCount": 1,
+        "rejectedCount": 0
+      }
+    ],
+    "acceptedCriticIdsDigest": "c97b7753562ca47ca539a17679850914e615beb5c014ca0bdb1809d3996bd8e1",
+    "digest": "f5892c51b82121ff4491db286e7b8bb7abe307b36efe9de61dbc3e04fa1fcdb1"
+  },
+  "target": {
+    "origin": "http://127.0.0.1:4274",
+    "owned": true,
+    "loopbackOnly": true,
+    "externalRequestsBlocked": true
+  },
+  "source": {
+    "incumbentSha256": "160a425a3cbce74035a86408c76559cd4653283f7e29a1f84cf34d3abd3ae338",
+    "candidateSha256": "b4f3eda138bbb4deb58315dbd96c8dafbdeee635de88ce2f318d5333ac8b2b38",
+    "patchSha256": "822399f7b782347e30f6c18a30bf1162c96070c53e4739cc58f71f87dd6ca188",
+    "factsSha256": "c1fc28e2027abda3b717cc971f3865d0e6686ea9b82c9b38bcbd099c1787fb90"
+  },
+  "artifacts": [
+    {
+      "id": "art-2c8c5282b32a-desktop-login-screenshot-aa86924342877c9fe0f0cfa41430ddd475eca9258174699f97cce1a07132847a.png",
+      "sha256": "aa86924342877c9fe0f0cfa41430ddd475eca9258174699f97cce1a07132847a",
+      "uri": "artifact://art-2c8c5282b32a-desktop-login-screenshot-aa86924342877c9fe0f0cfa41430ddd475eca9258174699f97cce1a07132847a.png",
+      "kind": "screenshot",
+      "label": "Sign in with the brand demo account · desktop",
+      "stepId": "login",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.066Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-desktop-directory-screenshot-6a22bd50ff3b764ba921ab3dd24ce18143dfd505354a6b2ead6318e8d036fb23.png",
+      "sha256": "6a22bd50ff3b764ba921ab3dd24ce18143dfd505354a6b2ead6318e8d036fb23",
+      "uri": "artifact://art-2c8c5282b32a-desktop-directory-screenshot-6a22bd50ff3b764ba921ab3dd24ce18143dfd505354a6b2ead6318e8d036fb23.png",
+      "kind": "screenshot",
+      "label": "Open Creator Directory · desktop",
+      "stepId": "directory",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.163Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-desktop-search-screenshot-ef7eef1aea932faa0f7ce2606fd81396138049c4bc22ad2897c9eeca71fc435c.png",
+      "sha256": "ef7eef1aea932faa0f7ce2606fd81396138049c4bc22ad2897c9eeca71fc435c",
+      "uri": "artifact://art-2c8c5282b32a-desktop-search-screenshot-ef7eef1aea932faa0f7ce2606fd81396138049c4bc22ad2897c9eeca71fc435c.png",
+      "kind": "screenshot",
+      "label": "Search for US · desktop",
+      "stepId": "search",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.282Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-desktop-profile-screenshot-63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749.png",
+      "sha256": "63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749",
+      "uri": "artifact://art-2c8c5282b32a-desktop-profile-screenshot-63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749.png",
+      "kind": "screenshot",
+      "label": "Open John Smith · desktop",
+      "stepId": "profile",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.387Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-desktop-inspect-screenshot-63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749.png",
+      "sha256": "63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749",
+      "uri": "artifact://art-2c8c5282b32a-desktop-inspect-screenshot-63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749.png",
+      "kind": "screenshot",
+      "label": "Determine audience, verified channel, US-market fit, and next action · desktop",
+      "stepId": "inspect",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.454Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-desktop-offer-screenshot-8e0a11841d5500e241382fb22a30fd55381ab37d6a28d5c715096d1d4153f626.png",
+      "sha256": "8e0a11841d5500e241382fb22a30fd55381ab37d6a28d5c715096d1d4153f626",
+      "uri": "artifact://art-2c8c5282b32a-desktop-offer-screenshot-8e0a11841d5500e241382fb22a30fd55381ab37d6a28d5c715096d1d4153f626.png",
+      "kind": "screenshot",
+      "label": "Change the fee to 1500 and prepare the draft · desktop",
+      "stepId": "offer",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.611Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-desktop-confirm-screenshot-8e0a11841d5500e241382fb22a30fd55381ab37d6a28d5c715096d1d4153f626.png",
+      "sha256": "8e0a11841d5500e241382fb22a30fd55381ab37d6a28d5c715096d1d4153f626",
+      "uri": "artifact://art-2c8c5282b32a-desktop-confirm-screenshot-8e0a11841d5500e241382fb22a30fd55381ab37d6a28d5c715096d1d4153f626.png",
+      "kind": "screenshot",
+      "label": "Confirm the offer remains an unsent draft · desktop",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.671Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-desktop-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+      "sha256": "bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d",
+      "uri": "artifact://art-2c8c5282b32a-desktop-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+      "kind": "accessibility",
+      "label": "accessibility facts · desktop",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.682Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-desktop-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+      "sha256": "182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01",
+      "uri": "artifact://art-2c8c5282b32a-desktop-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+      "kind": "console",
+      "label": "console facts · desktop",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.684Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+      "sha256": "e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c",
+      "uri": "artifact://art-2c8c5282b32a-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+      "kind": "network",
+      "label": "network facts · desktop",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.688Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-desktop-confirm-trace-8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221.json",
+      "sha256": "8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221",
+      "uri": "artifact://art-2c8c5282b32a-desktop-confirm-trace-8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221.json",
+      "kind": "trace",
+      "label": "trace facts · desktop",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:21.691Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-login-screenshot-c8f089a99f6fdcd901a4a5fcb2fe8134ab1b8515f6f302ce614f0f9ee8c00e43.png",
+      "sha256": "c8f089a99f6fdcd901a4a5fcb2fe8134ab1b8515f6f302ce614f0f9ee8c00e43",
+      "uri": "artifact://art-2c8c5282b32a-mobile-login-screenshot-c8f089a99f6fdcd901a4a5fcb2fe8134ab1b8515f6f302ce614f0f9ee8c00e43.png",
+      "kind": "screenshot",
+      "label": "Sign in with the brand demo account · mobile",
+      "stepId": "login",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.441Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-directory-screenshot-3faefaa78ec1b08fe6b791b31ca17e44301e6c426029253e0c9e54ffad6af516.png",
+      "sha256": "3faefaa78ec1b08fe6b791b31ca17e44301e6c426029253e0c9e54ffad6af516",
+      "uri": "artifact://art-2c8c5282b32a-mobile-directory-screenshot-3faefaa78ec1b08fe6b791b31ca17e44301e6c426029253e0c9e54ffad6af516.png",
+      "kind": "screenshot",
+      "label": "Open Creator Directory · mobile",
+      "stepId": "directory",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.506Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-search-screenshot-ac1ea1d877f7518e1a9d8c6db28396841b1983ce8ef1b9efd9d91c5fb047c850.png",
+      "sha256": "ac1ea1d877f7518e1a9d8c6db28396841b1983ce8ef1b9efd9d91c5fb047c850",
+      "uri": "artifact://art-2c8c5282b32a-mobile-search-screenshot-ac1ea1d877f7518e1a9d8c6db28396841b1983ce8ef1b9efd9d91c5fb047c850.png",
+      "kind": "screenshot",
+      "label": "Search for US · mobile",
+      "stepId": "search",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.604Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-profile-screenshot-08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67.png",
+      "sha256": "08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67",
+      "uri": "artifact://art-2c8c5282b32a-mobile-profile-screenshot-08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67.png",
+      "kind": "screenshot",
+      "label": "Open John Smith · mobile",
+      "stepId": "profile",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.694Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-inspect-screenshot-08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67.png",
+      "sha256": "08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67",
+      "uri": "artifact://art-2c8c5282b32a-mobile-inspect-screenshot-08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67.png",
+      "kind": "screenshot",
+      "label": "Determine audience, verified channel, US-market fit, and next action · mobile",
+      "stepId": "inspect",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.732Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-offer-screenshot-cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a.png",
+      "sha256": "cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a",
+      "uri": "artifact://art-2c8c5282b32a-mobile-offer-screenshot-cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a.png",
+      "kind": "screenshot",
+      "label": "Change the fee to 1500 and prepare the draft · mobile",
+      "stepId": "offer",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.848Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-confirm-screenshot-cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a.png",
+      "sha256": "cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a",
+      "uri": "artifact://art-2c8c5282b32a-mobile-confirm-screenshot-cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a.png",
+      "kind": "screenshot",
+      "label": "Confirm the offer remains an unsent draft · mobile",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.881Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+      "sha256": "bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d",
+      "uri": "artifact://art-2c8c5282b32a-mobile-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+      "kind": "accessibility",
+      "label": "accessibility facts · mobile",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.890Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+      "sha256": "182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01",
+      "uri": "artifact://art-2c8c5282b32a-mobile-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+      "kind": "console",
+      "label": "console facts · mobile",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.894Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+      "sha256": "e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c",
+      "uri": "artifact://art-2c8c5282b32a-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+      "kind": "network",
+      "label": "network facts · mobile",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.897Z"
+    },
+    {
+      "id": "art-2c8c5282b32a-mobile-confirm-trace-39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb.json",
+      "sha256": "39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb",
+      "uri": "artifact://art-2c8c5282b32a-mobile-confirm-trace-39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb.json",
+      "kind": "trace",
+      "label": "trace facts · mobile",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:49:22.901Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-login-screenshot-62574c77b9026b21475978498bd9ca804cb7c7cbc3c6e1c6939bbe49ae0b5b61.png",
+      "sha256": "62574c77b9026b21475978498bd9ca804cb7c7cbc3c6e1c6939bbe49ae0b5b61",
+      "uri": "artifact://art-28cab65463fa-desktop-login-screenshot-62574c77b9026b21475978498bd9ca804cb7c7cbc3c6e1c6939bbe49ae0b5b61.png",
+      "kind": "screenshot",
+      "label": "Sign in with the brand demo account · desktop",
+      "stepId": "login",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.292Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-directory-screenshot-b2ea20a7c33f1075923351402aceac3b78d024c9fc47fbc5464fa540780f4ad4.png",
+      "sha256": "b2ea20a7c33f1075923351402aceac3b78d024c9fc47fbc5464fa540780f4ad4",
+      "uri": "artifact://art-28cab65463fa-desktop-directory-screenshot-b2ea20a7c33f1075923351402aceac3b78d024c9fc47fbc5464fa540780f4ad4.png",
+      "kind": "screenshot",
+      "label": "Open Creator Directory · desktop",
+      "stepId": "directory",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.374Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-search-screenshot-ae2cfdf29f765a01461436ec7585ee54bd9854c8005c28cb01b482d55581f36b.png",
+      "sha256": "ae2cfdf29f765a01461436ec7585ee54bd9854c8005c28cb01b482d55581f36b",
+      "uri": "artifact://art-28cab65463fa-desktop-search-screenshot-ae2cfdf29f765a01461436ec7585ee54bd9854c8005c28cb01b482d55581f36b.png",
+      "kind": "screenshot",
+      "label": "Search for US · desktop",
+      "stepId": "search",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.480Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-profile-screenshot-5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f.png",
+      "sha256": "5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f",
+      "uri": "artifact://art-28cab65463fa-desktop-profile-screenshot-5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f.png",
+      "kind": "screenshot",
+      "label": "Open John Smith · desktop",
+      "stepId": "profile",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.573Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-inspect-screenshot-5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f.png",
+      "sha256": "5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f",
+      "uri": "artifact://art-28cab65463fa-desktop-inspect-screenshot-5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f.png",
+      "kind": "screenshot",
+      "label": "Determine audience, verified channel, US-market fit, and next action · desktop",
+      "stepId": "inspect",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.624Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-offer-screenshot-51e64a127134fab63ae827c1aa35302e071e43709c7907b9fe42160f8a86b546.png",
+      "sha256": "51e64a127134fab63ae827c1aa35302e071e43709c7907b9fe42160f8a86b546",
+      "uri": "artifact://art-28cab65463fa-desktop-offer-screenshot-51e64a127134fab63ae827c1aa35302e071e43709c7907b9fe42160f8a86b546.png",
+      "kind": "screenshot",
+      "label": "Change the fee to 1500 and prepare the draft · desktop",
+      "stepId": "offer",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.744Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-confirm-screenshot-51e64a127134fab63ae827c1aa35302e071e43709c7907b9fe42160f8a86b546.png",
+      "sha256": "51e64a127134fab63ae827c1aa35302e071e43709c7907b9fe42160f8a86b546",
+      "uri": "artifact://art-28cab65463fa-desktop-confirm-screenshot-51e64a127134fab63ae827c1aa35302e071e43709c7907b9fe42160f8a86b546.png",
+      "kind": "screenshot",
+      "label": "Confirm the offer remains an unsent draft · desktop",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.792Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+      "sha256": "bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d",
+      "uri": "artifact://art-28cab65463fa-desktop-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+      "kind": "accessibility",
+      "label": "accessibility facts · desktop",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.803Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+      "sha256": "182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01",
+      "uri": "artifact://art-28cab65463fa-desktop-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+      "kind": "console",
+      "label": "console facts · desktop",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.808Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+      "sha256": "e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c",
+      "uri": "artifact://art-28cab65463fa-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+      "kind": "network",
+      "label": "network facts · desktop",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.812Z"
+    },
+    {
+      "id": "art-28cab65463fa-desktop-confirm-trace-8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221.json",
+      "sha256": "8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221",
+      "uri": "artifact://art-28cab65463fa-desktop-confirm-trace-8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221.json",
+      "kind": "trace",
+      "label": "trace facts · desktop",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:33.817Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-login-screenshot-f5609e9aa0c79173c90ecde599a7bced6839befd2913f1f7cd9687cc14d024f2.png",
+      "sha256": "f5609e9aa0c79173c90ecde599a7bced6839befd2913f1f7cd9687cc14d024f2",
+      "uri": "artifact://art-28cab65463fa-mobile-login-screenshot-f5609e9aa0c79173c90ecde599a7bced6839befd2913f1f7cd9687cc14d024f2.png",
+      "kind": "screenshot",
+      "label": "Sign in with the brand demo account · mobile",
+      "stepId": "login",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:34.577Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-directory-screenshot-65c03e4f1562036f7512a0508a18d65e537feeb041355ed235143ea6796dfff7.png",
+      "sha256": "65c03e4f1562036f7512a0508a18d65e537feeb041355ed235143ea6796dfff7",
+      "uri": "artifact://art-28cab65463fa-mobile-directory-screenshot-65c03e4f1562036f7512a0508a18d65e537feeb041355ed235143ea6796dfff7.png",
+      "kind": "screenshot",
+      "label": "Open Creator Directory · mobile",
+      "stepId": "directory",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:34.638Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-search-screenshot-641ff2d545eb17976bee6277d5188dfe097998d8816c26f89a23c36a9a365326.png",
+      "sha256": "641ff2d545eb17976bee6277d5188dfe097998d8816c26f89a23c36a9a365326",
+      "uri": "artifact://art-28cab65463fa-mobile-search-screenshot-641ff2d545eb17976bee6277d5188dfe097998d8816c26f89a23c36a9a365326.png",
+      "kind": "screenshot",
+      "label": "Search for US · mobile",
+      "stepId": "search",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:34.723Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-profile-screenshot-60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2.png",
+      "sha256": "60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2",
+      "uri": "artifact://art-28cab65463fa-mobile-profile-screenshot-60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2.png",
+      "kind": "screenshot",
+      "label": "Open John Smith · mobile",
+      "stepId": "profile",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:34.810Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-inspect-screenshot-60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2.png",
+      "sha256": "60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2",
+      "uri": "artifact://art-28cab65463fa-mobile-inspect-screenshot-60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2.png",
+      "kind": "screenshot",
+      "label": "Determine audience, verified channel, US-market fit, and next action · mobile",
+      "stepId": "inspect",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:34.859Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-offer-screenshot-3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753.png",
+      "sha256": "3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753",
+      "uri": "artifact://art-28cab65463fa-mobile-offer-screenshot-3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753.png",
+      "kind": "screenshot",
+      "label": "Change the fee to 1500 and prepare the draft · mobile",
+      "stepId": "offer",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:34.977Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-confirm-screenshot-3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753.png",
+      "sha256": "3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753",
+      "uri": "artifact://art-28cab65463fa-mobile-confirm-screenshot-3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753.png",
+      "kind": "screenshot",
+      "label": "Confirm the offer remains an unsent draft · mobile",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:35.012Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+      "sha256": "bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d",
+      "uri": "artifact://art-28cab65463fa-mobile-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+      "kind": "accessibility",
+      "label": "accessibility facts · mobile",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:35.023Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+      "sha256": "182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01",
+      "uri": "artifact://art-28cab65463fa-mobile-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+      "kind": "console",
+      "label": "console facts · mobile",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:35.027Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+      "sha256": "e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c",
+      "uri": "artifact://art-28cab65463fa-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+      "kind": "network",
+      "label": "network facts · mobile",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:35.031Z"
+    },
+    {
+      "id": "art-28cab65463fa-mobile-confirm-trace-39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb.json",
+      "sha256": "39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb",
+      "uri": "artifact://art-28cab65463fa-mobile-confirm-trace-39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb.json",
+      "kind": "trace",
+      "label": "trace facts · mobile",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:35.035Z"
+    },
+    {
+      "id": "art-28cab65463fa-runtime-patch-grounding-trace-b7264d2801996b93802e76d5a79ba5ab5c0b56c8e52b8d9da49ee5057db50491.json",
+      "kind": "trace",
+      "label": "Gemini candidate sealed-fact grounding map",
+      "uri": "artifact://art-28cab65463fa-runtime-patch-grounding-trace-b7264d2801996b93802e76d5a79ba5ab5c0b56c8e52b8d9da49ee5057db50491.json",
+      "sha256": "b7264d2801996b93802e76d5a79ba5ab5c0b56c8e52b8d9da49ee5057db50491",
+      "stepId": "patch-grounding",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:50:32.290Z"
+    }
+  ],
+  "evaluations": {
+    "incumbent": {
+      "variant": "incumbent",
+      "score": 40,
+      "metrics": {
+        "taskComplete": true,
+        "decisionEvidenceCount": 0,
+        "decisionEvidenceTarget": 4,
+        "internalIdentifierCount": 1,
+        "externalRequestCount": 0,
+        "effectRequestCount": 0,
+        "accessiblePrimaryControls": true,
+        "horizontalOverflowPixels": 104,
+        "consoleErrorCount": 0,
+        "offerEditable": true,
+        "draftOnly": true
+      },
+      "gates": [
+        {
+          "id": "owned_local_target",
+          "critical": true,
+          "passed": true,
+          "observation": "Target is owned and loopback-only; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-2c8c5282b32a-desktop-confirm-trace-8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221.json",
+            "art-2c8c5282b32a-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-2c8c5282b32a-mobile-confirm-trace-39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb.json"
+          ]
+        },
+        {
+          "id": "same_task_fingerprint",
+          "critical": true,
+          "passed": true,
+          "observation": "Both variants replay the exact same task; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-confirm-trace-8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221.json",
+            "art-2c8c5282b32a-mobile-confirm-trace-39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb.json"
+          ]
+        },
+        {
+          "id": "brand_demo_login",
+          "critical": true,
+          "passed": true,
+          "observation": "Brand demo login succeeds; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-login-screenshot-aa86924342877c9fe0f0cfa41430ddd475eca9258174699f97cce1a07132847a.png",
+            "art-2c8c5282b32a-mobile-login-screenshot-c8f089a99f6fdcd901a4a5fcb2fe8134ab1b8515f6f302ce614f0f9ee8c00e43.png"
+          ]
+        },
+        {
+          "id": "directory_search",
+          "critical": true,
+          "passed": true,
+          "observation": "US search returns John Smith; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-search-screenshot-ef7eef1aea932faa0f7ce2606fd81396138049c4bc22ad2897c9eeca71fc435c.png",
+            "art-2c8c5282b32a-mobile-search-screenshot-ac1ea1d877f7518e1a9d8c6db28396841b1983ce8ef1b9efd9d91c5fb047c850.png"
+          ]
+        },
+        {
+          "id": "profile_open",
+          "critical": true,
+          "passed": true,
+          "observation": "John Smith profile opens; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-profile-screenshot-63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749.png",
+            "art-2c8c5282b32a-mobile-profile-screenshot-08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67.png"
+          ]
+        },
+        {
+          "id": "decision_evidence_complete",
+          "critical": true,
+          "passed": false,
+          "observation": "Audience, verified channel, market fit, and next action are visible; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-inspect-screenshot-63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749.png",
+            "art-2c8c5282b32a-mobile-inspect-screenshot-08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67.png"
+          ]
+        },
+        {
+          "id": "offer_fields_editable",
+          "critical": true,
+          "passed": true,
+          "observation": "Message and fee stay editable; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-offer-screenshot-8e0a11841d5500e241382fb22a30fd55381ab37d6a28d5c715096d1d4153f626.png",
+            "art-2c8c5282b32a-mobile-offer-screenshot-cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a.png"
+          ]
+        },
+        {
+          "id": "draft_not_sent",
+          "critical": true,
+          "passed": true,
+          "observation": "Offer action only prepares a local draft; incumbent/candidate evidence packets are symmetric and hash-verified; effectRequestCount=0",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-confirm-screenshot-8e0a11841d5500e241382fb22a30fd55381ab37d6a28d5c715096d1d4153f626.png",
+            "art-2c8c5282b32a-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-2c8c5282b32a-mobile-confirm-screenshot-cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a.png",
+            "art-2c8c5282b32a-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json"
+          ]
+        },
+        {
+          "id": "no_internal_identifier_exposure",
+          "critical": true,
+          "passed": false,
+          "observation": "No opaque provider ID, secret, token, or internal URL is rendered; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-inspect-screenshot-63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749.png",
+            "art-2c8c5282b32a-mobile-inspect-screenshot-08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67.png"
+          ]
+        },
+        {
+          "id": "accessible_primary_controls",
+          "critical": true,
+          "passed": true,
+          "observation": "Primary journey controls have accessible names; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+            "art-2c8c5282b32a-mobile-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json"
+          ]
+        },
+        {
+          "id": "responsive_primary_action",
+          "critical": true,
+          "passed": false,
+          "observation": "Mobile has no document overflow or clipped primary action; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-mobile-confirm-screenshot-cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a.png"
+          ]
+        },
+        {
+          "id": "console_and_network_clean",
+          "critical": true,
+          "passed": true,
+          "observation": "No relevant console error and no cross-origin request; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+            "art-2c8c5282b32a-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-2c8c5282b32a-mobile-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+            "art-2c8c5282b32a-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json"
+          ]
+        },
+        {
+          "id": "artifact_integrity",
+          "critical": true,
+          "passed": true,
+          "observation": "Recorded evidence hashes verify; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-2c8c5282b32a-desktop-login-screenshot-aa86924342877c9fe0f0cfa41430ddd475eca9258174699f97cce1a07132847a.png",
+            "art-2c8c5282b32a-desktop-directory-screenshot-6a22bd50ff3b764ba921ab3dd24ce18143dfd505354a6b2ead6318e8d036fb23.png",
+            "art-2c8c5282b32a-desktop-search-screenshot-ef7eef1aea932faa0f7ce2606fd81396138049c4bc22ad2897c9eeca71fc435c.png",
+            "art-2c8c5282b32a-desktop-profile-screenshot-63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749.png",
+            "art-2c8c5282b32a-desktop-inspect-screenshot-63c29c49907eee6b97ed868d0227192fe7d895714db41783f0b45582147d7749.png",
+            "art-2c8c5282b32a-desktop-offer-screenshot-8e0a11841d5500e241382fb22a30fd55381ab37d6a28d5c715096d1d4153f626.png",
+            "art-2c8c5282b32a-desktop-confirm-screenshot-8e0a11841d5500e241382fb22a30fd55381ab37d6a28d5c715096d1d4153f626.png",
+            "art-2c8c5282b32a-desktop-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+            "art-2c8c5282b32a-desktop-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+            "art-2c8c5282b32a-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-2c8c5282b32a-desktop-confirm-trace-8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221.json",
+            "art-2c8c5282b32a-mobile-login-screenshot-c8f089a99f6fdcd901a4a5fcb2fe8134ab1b8515f6f302ce614f0f9ee8c00e43.png",
+            "art-2c8c5282b32a-mobile-directory-screenshot-3faefaa78ec1b08fe6b791b31ca17e44301e6c426029253e0c9e54ffad6af516.png",
+            "art-2c8c5282b32a-mobile-search-screenshot-ac1ea1d877f7518e1a9d8c6db28396841b1983ce8ef1b9efd9d91c5fb047c850.png",
+            "art-2c8c5282b32a-mobile-profile-screenshot-08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67.png",
+            "art-2c8c5282b32a-mobile-inspect-screenshot-08fc4657811b1dec172b77f4310be5bfd07ab21af5d347f829ff1f1566ca4a67.png",
+            "art-2c8c5282b32a-mobile-offer-screenshot-cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a.png",
+            "art-2c8c5282b32a-mobile-confirm-screenshot-cadb361f820afea10a33a12044ab3da2b93907bc6899b4a0fb0b7f8f36e9536a.png",
+            "art-2c8c5282b32a-mobile-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+            "art-2c8c5282b32a-mobile-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+            "art-2c8c5282b32a-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-2c8c5282b32a-mobile-confirm-trace-39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb.json"
+          ]
+        }
+      ]
+    },
+    "candidate": {
+      "variant": "candidate",
+      "score": 100,
+      "metrics": {
+        "taskComplete": true,
+        "decisionEvidenceCount": 4,
+        "decisionEvidenceTarget": 4,
+        "internalIdentifierCount": 0,
+        "externalRequestCount": 0,
+        "effectRequestCount": 0,
+        "accessiblePrimaryControls": true,
+        "horizontalOverflowPixels": 0,
+        "consoleErrorCount": 0,
+        "offerEditable": true,
+        "draftOnly": true
+      },
+      "gates": [
+        {
+          "id": "owned_local_target",
+          "critical": true,
+          "passed": true,
+          "observation": "Target is owned and loopback-only; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-28cab65463fa-desktop-confirm-trace-8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221.json",
+            "art-28cab65463fa-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-28cab65463fa-mobile-confirm-trace-39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb.json"
+          ]
+        },
+        {
+          "id": "same_task_fingerprint",
+          "critical": true,
+          "passed": true,
+          "observation": "Both variants replay the exact same task; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-confirm-trace-8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221.json",
+            "art-28cab65463fa-mobile-confirm-trace-39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb.json"
+          ]
+        },
+        {
+          "id": "brand_demo_login",
+          "critical": true,
+          "passed": true,
+          "observation": "Brand demo login succeeds; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-login-screenshot-62574c77b9026b21475978498bd9ca804cb7c7cbc3c6e1c6939bbe49ae0b5b61.png",
+            "art-28cab65463fa-mobile-login-screenshot-f5609e9aa0c79173c90ecde599a7bced6839befd2913f1f7cd9687cc14d024f2.png"
+          ]
+        },
+        {
+          "id": "directory_search",
+          "critical": true,
+          "passed": true,
+          "observation": "US search returns John Smith; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-search-screenshot-ae2cfdf29f765a01461436ec7585ee54bd9854c8005c28cb01b482d55581f36b.png",
+            "art-28cab65463fa-mobile-search-screenshot-641ff2d545eb17976bee6277d5188dfe097998d8816c26f89a23c36a9a365326.png"
+          ]
+        },
+        {
+          "id": "profile_open",
+          "critical": true,
+          "passed": true,
+          "observation": "John Smith profile opens; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-profile-screenshot-5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f.png",
+            "art-28cab65463fa-mobile-profile-screenshot-60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2.png"
+          ]
+        },
+        {
+          "id": "decision_evidence_complete",
+          "critical": true,
+          "passed": true,
+          "observation": "Audience, verified channel, market fit, and next action are visible; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-inspect-screenshot-5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f.png",
+            "art-28cab65463fa-mobile-inspect-screenshot-60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2.png"
+          ]
+        },
+        {
+          "id": "offer_fields_editable",
+          "critical": true,
+          "passed": true,
+          "observation": "Message and fee stay editable; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-offer-screenshot-51e64a127134fab63ae827c1aa35302e071e43709c7907b9fe42160f8a86b546.png",
+            "art-28cab65463fa-mobile-offer-screenshot-3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753.png"
+          ]
+        },
+        {
+          "id": "draft_not_sent",
+          "critical": true,
+          "passed": true,
+          "observation": "Offer action only prepares a local draft; incumbent/candidate evidence packets are symmetric and hash-verified; effectRequestCount=0",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-confirm-screenshot-51e64a127134fab63ae827c1aa35302e071e43709c7907b9fe42160f8a86b546.png",
+            "art-28cab65463fa-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-28cab65463fa-mobile-confirm-screenshot-3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753.png",
+            "art-28cab65463fa-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json"
+          ]
+        },
+        {
+          "id": "no_internal_identifier_exposure",
+          "critical": true,
+          "passed": true,
+          "observation": "No opaque provider ID, secret, token, or internal URL is rendered; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-inspect-screenshot-5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f.png",
+            "art-28cab65463fa-mobile-inspect-screenshot-60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2.png"
+          ]
+        },
+        {
+          "id": "accessible_primary_controls",
+          "critical": true,
+          "passed": true,
+          "observation": "Primary journey controls have accessible names; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+            "art-28cab65463fa-mobile-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json"
+          ]
+        },
+        {
+          "id": "responsive_primary_action",
+          "critical": true,
+          "passed": true,
+          "observation": "Mobile has no document overflow or clipped primary action; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-mobile-confirm-screenshot-3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753.png"
+          ]
+        },
+        {
+          "id": "console_and_network_clean",
+          "critical": true,
+          "passed": true,
+          "observation": "No relevant console error and no cross-origin request; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+            "art-28cab65463fa-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-28cab65463fa-mobile-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+            "art-28cab65463fa-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json"
+          ]
+        },
+        {
+          "id": "artifact_integrity",
+          "critical": true,
+          "passed": true,
+          "observation": "Recorded evidence hashes verify; incumbent/candidate evidence packets are symmetric and hash-verified",
+          "artifactIds": [
+            "art-28cab65463fa-desktop-login-screenshot-62574c77b9026b21475978498bd9ca804cb7c7cbc3c6e1c6939bbe49ae0b5b61.png",
+            "art-28cab65463fa-desktop-directory-screenshot-b2ea20a7c33f1075923351402aceac3b78d024c9fc47fbc5464fa540780f4ad4.png",
+            "art-28cab65463fa-desktop-search-screenshot-ae2cfdf29f765a01461436ec7585ee54bd9854c8005c28cb01b482d55581f36b.png",
+            "art-28cab65463fa-desktop-profile-screenshot-5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f.png",
+            "art-28cab65463fa-desktop-inspect-screenshot-5d7a5fefd22fce18fe258df132e2ae7652b541ea8087c6bed64a037c98d5f13f.png",
+            "art-28cab65463fa-desktop-offer-screenshot-51e64a127134fab63ae827c1aa35302e071e43709c7907b9fe42160f8a86b546.png",
+            "art-28cab65463fa-desktop-confirm-screenshot-51e64a127134fab63ae827c1aa35302e071e43709c7907b9fe42160f8a86b546.png",
+            "art-28cab65463fa-desktop-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+            "art-28cab65463fa-desktop-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+            "art-28cab65463fa-desktop-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-28cab65463fa-desktop-confirm-trace-8e31b703f302375742f0e596109617e4156b201381d12ceea93316c3dbe4c221.json",
+            "art-28cab65463fa-mobile-login-screenshot-f5609e9aa0c79173c90ecde599a7bced6839befd2913f1f7cd9687cc14d024f2.png",
+            "art-28cab65463fa-mobile-directory-screenshot-65c03e4f1562036f7512a0508a18d65e537feeb041355ed235143ea6796dfff7.png",
+            "art-28cab65463fa-mobile-search-screenshot-641ff2d545eb17976bee6277d5188dfe097998d8816c26f89a23c36a9a365326.png",
+            "art-28cab65463fa-mobile-profile-screenshot-60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2.png",
+            "art-28cab65463fa-mobile-inspect-screenshot-60c1dbd4efa98afaa9bf5122e3d0fa2f6d485a3d890b95012d7c4a5c559c1dd2.png",
+            "art-28cab65463fa-mobile-offer-screenshot-3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753.png",
+            "art-28cab65463fa-mobile-confirm-screenshot-3247e473d14ecc0ee691ce0c76378fcca4f78cc608ca7a1132eeb838e3c58753.png",
+            "art-28cab65463fa-mobile-confirm-accessibility-bd4679ff0bf3faa0e79ecfe91c1bfc047ac9d648415e07e647f3dc3f757f031d.json",
+            "art-28cab65463fa-mobile-confirm-console-182c298cfd9d7c896cc07ac87925469927d6e2206931a118f38fc8e50a367a01.json",
+            "art-28cab65463fa-mobile-confirm-network-e918cfbd752af2a7d794cd37c51382c4784072a4a702c36ef352b2ec6873d47c.json",
+            "art-28cab65463fa-mobile-confirm-trace-39fedc5f650b09634571222a3b34285043c39919a70057ae5700e7b36fc33fbb.json"
+          ]
+        }
+      ]
+    }
+  },
+  "blindComparison": {
+    "protocolVersion": 1,
+    "orderCommitmentSha256": "6355a8d9bbe336819e418a44856a5d2edd047bfaf8ca271c0518579d81a4a71f",
+    "status": "valid",
+    "invocationCount": 1,
+    "validationRepair": {
+      "mode": "none",
+      "rejectedResponseSha256": null,
+      "invalidFields": [],
+      "digest": "af2dbff091244021c1bcab47631531181bda93d251ebcfecdc69c082b99440b4"
+    },
+    "winnerLabel": "A",
+    "revealedWinner": "candidate",
+    "mappingReveal": {
+      "A": "candidate",
+      "B": "incumbent",
+      "nonce": "blind-nonce-d5c16ca1-b662-4b27-9b6f-b7f7f9d87efd"
+    },
+    "judge": {
+      "kind": "model",
+      "provider": "google",
+      "model": "gemini-3.6-flash",
+      "responseId": "3g2Tap7LBO3-2roPm72BsAU"
+    },
+    "invalidReason": null,
+    "evaluatedAt": "2026-08-29T16:50:44.379Z"
+  },
+  "comparison": {
+    "scoreDelta": 60,
+    "decisionEvidenceDelta": 4,
+    "decision": "promote",
+    "reasons": [
+      "strict_outcome_improvement_with_all_critical_gates_passed"
+    ]
+  },
+  "lineage": {
+    "previousReceiptSha256": "e276b0968dd64d22dee0decbb0412fdcf3aa332a4b4cf35785072d113c87c532"
+  },
+  "integrity": {
+    "algorithm": "sha256-canonical-json-v1",
+    "payloadSha256": "ccc30b9916a6ef1198efc5c22470c2963a4180c35b014715ea1c5747bd8599ab",
+    "ledgerHead": "13b815779cb0626e2a30cacc6c8e75e94f157603bb704b0fd3672e7a58d22d61",
+    "ledgerLength": 19,
+    "attestationReceiptId": "receipt_13b815779cb0626e2a30"
+  }
+}

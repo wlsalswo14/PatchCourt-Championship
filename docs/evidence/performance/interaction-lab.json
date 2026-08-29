@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-30T02:33:00+09:00",
+  "browser": "playwright-chromium-1234",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "interactions": [
+    {
+      "name": "open-comparison",
+      "clickToVisibleMs": 215.24,
+      "eventDurationMs": 56
+    },
+    {
+      "name": "reveal-blind-mapping",
+      "clickToVisibleMs": 58.56,
+      "eventDurationMs": 32
+    },
+    {
+      "name": "open-receipt",
+      "clickToVisibleMs": 101.2,
+      "eventDurationMs": 96
+    }
+  ],
+  "maxEventDurationMs": 96,
+  "horizontalOverflowPixels": 0,
+  "claimBoundary": "A three-interaction lab Event Timing sample, not field INP or a 75th-percentile population measurement."
+}

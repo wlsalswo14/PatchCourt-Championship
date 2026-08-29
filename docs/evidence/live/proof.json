@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-29T17:05:40.739Z",
+  "boundary": {
+    "ownedSyntheticFixture": true,
+    "loopbackOnly": true,
+    "externalRequestsBlocked": true,
+    "providerRawResponsesCopied": false,
+    "secretsCopied": false,
+    "absoluteRuntimePathsCopied": false
+  },
+  "runtime": {
+    "rootNameOnly": "patchcourt-live-final-20260830",
+    "runId": "pc01-edaaca75-c913-4a20-8885-4b58e87163fe",
+    "status": "promoted",
+    "execution": {
+      "mode": "live-gemini",
+      "criticProvider": "patchcourt:three-role-metric-critics-v1+google:three-role-grounded-court",
+      "patchProvider": "google:value-only-isolated-candidate",
+      "judgeProvider": "google:blinded-multimodal-pairwise",
+      "model": "gemini-3.6-flash"
+    }
+  },
+  "verification": {
+    "schemaValid": true,
+    "canonicalPayloadHashValid": true,
+    "artifactBytesReverifiedByService": true,
+    "browserArtifactCount": 44,
+    "groundingArtifactCount": 1,
+    "totalReverifiedArtifactCount": 45,
+    "candidateGateCount": 13,
+    "candidateGatePassCount": 13,
+    "findingCount": 7,
+    "criticProvenanceEntryCount": 6,
+    "judgeInvocationCount": 1,
+    "judgeValidationRepair": {
+      "mode": "none",
+      "rejectedResponseSha256": null,
+      "invalidFields": [],
+      "digest": "af2dbff091244021c1bcab47631531181bda93d251ebcfecdc69c082b99440b4"
+    },
+    "receiptPayloadSha256": "ccc30b9916a6ef1198efc5c22470c2963a4180c35b014715ea1c5747bd8599ab",
+    "receiptFileSha256": "83206187e37f4949747d860c04e7cf0ba66846733c722db45349a7fff128adfa",
+    "secretPatternMatches": 0,
+    "absolutePathMatches": 0
+  },
+  "authority": {
+    "taskFingerprint": "49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef",
+    "incumbentSha256": "160a425a3cbce74035a86408c76559cd4653283f7e29a1f84cf34d3abd3ae338",
+    "candidateSha256": "b4f3eda138bbb4deb58315dbd96c8dafbdeee635de88ce2f318d5333ac8b2b38",
+    "patchSha256": "822399f7b782347e30f6c18a30bf1162c96070c53e4739cc58f71f87dd6ca188",
+    "factsSha256": "c1fc28e2027abda3b717cc971f3865d0e6686ea9b82c9b38bcbd099c1787fb90",
+    "fixtureManifestAvailable": true,
+    "fixtureManifestMatched": true
+  },
+  "verdict": {
+    "decision": "promote",
+    "blindStatus": "valid",
+    "scoreDelta": 60,
+    "decisionEvidenceDelta": 4
+  }
+}

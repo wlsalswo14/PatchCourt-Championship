@@ -1,0 +1,36 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+.vite/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+*.pyo
+runtime/
+runs/
+tmp/
+playwright-report/
+test-results/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+
+# Local agent orchestration notes are intentionally excluded from the public submission.
+AGENTS.md
+codex_current_work.md
+turn_summaries.jsonl
+memory/
+tasks/
+
+# Superseded local evidence/design attempts remain recoverable but are not submitted.
+docs/evidence/integration/api-runtime-20260829170648/
+docs/evidence/integration/api-runtime-20260829170847/
+docs/evidence/integration/api-runtime-20260829171546/
+design/raw/gemini-3.6-flash-prototype-partial-1788016446441.html
+design/raw/gemini-3.6-flash-prototype-partial-1788016561109.html
+design/raw/generation-prototype-partial-1788016561112.json

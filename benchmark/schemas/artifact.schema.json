@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://patchcourt.local/schemas/artifact.schema.json",
+  "title": "PatchCourt browser evidence artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "kind",
+    "label",
+    "uri",
+    "sha256",
+    "stepId",
+    "variant",
+    "capturedAt"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{2,127}$" },
+    "kind": { "enum": ["screenshot", "dom", "accessibility", "console", "network", "trace"] },
+    "label": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "uri": { "type": "string", "pattern": "^(?:docs/evidence/|artifact://)" },
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "stepId": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "variant": { "enum": ["incumbent", "candidate"] },
+    "capturedAt": { "type": "string", "format": "date-time" }
+  }
+}

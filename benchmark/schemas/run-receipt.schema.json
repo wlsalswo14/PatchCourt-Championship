@@ -1,0 +1,413 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://patchcourt.local/schemas/run-receipt.schema.json",
+  "title": "PatchCourt promotion receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "receiptId",
+    "runId",
+    "benchmarkId",
+    "appId",
+    "taskFingerprint",
+    "createdAt",
+    "target",
+    "source",
+    "execution",
+    "criticProvenance",
+    "artifacts",
+    "evaluations",
+    "blindComparison",
+    "comparison",
+    "lineage",
+    "integrity"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "receiptId": { "type": "string", "pattern": "^receipt-[a-z0-9-]+$" },
+    "runId": { "type": "string", "pattern": "^pc01-[a-z0-9-]+$" },
+    "benchmarkId": { "const": "PC01" },
+    "appId": { "const": "patchcourt-brand-match" },
+    "taskFingerprint": { "$ref": "#/$defs/sha256" },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["origin", "owned", "loopbackOnly", "externalRequestsBlocked"],
+      "properties": {
+        "origin": { "type": "string", "pattern": "^http://(?:127\\.0\\.0\\.1|localhost)(?::[0-9]{1,5})?$" },
+        "owned": { "const": true },
+        "loopbackOnly": { "const": true },
+        "externalRequestsBlocked": { "const": true }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["incumbentSha256", "candidateSha256", "patchSha256", "factsSha256"],
+      "properties": {
+        "incumbentSha256": { "$ref": "#/$defs/sha256" },
+        "candidateSha256": { "$ref": "#/$defs/sha256" },
+        "patchSha256": { "$ref": "#/$defs/sha256" },
+        "factsSha256": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "criticProvider", "patchProvider", "judgeProvider", "model"],
+      "properties": {
+        "mode": { "enum": ["offline-demo", "live-gemini"] },
+        "criticProvider": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "patchProvider": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "judgeProvider": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "model": {
+          "oneOf": [
+            { "type": "string", "minLength": 1, "maxLength": 200 },
+            { "type": "null" }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "mode": { "const": "offline-demo" } } },
+          "then": { "properties": { "model": { "type": "null" } } }
+        },
+        {
+          "if": { "properties": { "mode": { "const": "live-gemini" } } },
+          "then": { "properties": { "model": { "type": "string", "minLength": 1 } } }
+        }
+      ]
+    },
+    "criticProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entries", "acceptedCriticIdsDigest", "digest"],
+      "properties": {
+        "entries": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["criticId", "proposedCount", "acceptedCount", "rejectedCount"],
+            "properties": {
+              "criticId": { "type": "string", "minLength": 1, "maxLength": 200, "pattern": "^\\S(?:.*\\S)?$" },
+              "proposedCount": { "type": "integer", "minimum": 0 },
+              "acceptedCount": { "type": "integer", "minimum": 0 },
+              "rejectedCount": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "acceptedCriticIdsDigest": { "$ref": "#/$defs/sha256" },
+        "digest": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "minItems": 4,
+      "items": { "$ref": "artifact.schema.json" }
+    },
+    "evaluations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["incumbent", "candidate"],
+      "properties": {
+        "incumbent": { "$ref": "#/$defs/evaluation" },
+        "candidate": { "$ref": "#/$defs/evaluation" }
+      }
+    },
+    "blindComparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocolVersion",
+        "orderCommitmentSha256",
+        "status",
+        "winnerLabel",
+        "revealedWinner",
+        "mappingReveal",
+        "judge",
+        "validationRepair",
+        "invocationCount",
+        "evaluatedAt"
+      ],
+      "properties": {
+        "protocolVersion": { "const": 1 },
+        "orderCommitmentSha256": { "$ref": "#/$defs/sha256" },
+        "status": { "enum": ["valid", "tie", "invalid"] },
+        "winnerLabel": {
+          "oneOf": [{ "enum": ["A", "B"] }, { "type": "null" }]
+        },
+        "revealedWinner": {
+          "enum": ["incumbent", "candidate", "tie", "invalid"]
+        },
+        "mappingReveal": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["A", "B", "nonce"],
+          "properties": {
+            "A": { "enum": ["incumbent", "candidate"] },
+            "B": { "enum": ["incumbent", "candidate"] },
+            "nonce": { "type": "string", "minLength": 16, "maxLength": 200 }
+          },
+          "oneOf": [
+            {
+              "properties": {
+                "A": { "const": "incumbent" },
+                "B": { "const": "candidate" }
+              }
+            },
+            {
+              "properties": {
+                "A": { "const": "candidate" },
+                "B": { "const": "incumbent" }
+              }
+            }
+          ]
+        },
+        "judge": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "provider", "model", "responseId"],
+          "properties": {
+            "kind": { "enum": ["model", "human", "deterministic"] },
+            "provider": { "type": "string", "minLength": 1, "maxLength": 100 },
+            "model": { "type": "string", "minLength": 1, "maxLength": 200 },
+            "responseId": {
+              "oneOf": [
+                { "type": "string", "minLength": 1, "maxLength": 300 },
+                { "type": "null" }
+              ]
+            },
+            "reasoningEffort": {
+              "oneOf": [
+                { "type": "string", "minLength": 1, "maxLength": 50 },
+                { "type": "null" }
+              ]
+            }
+          }
+        },
+        "validationRepair": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["mode", "rejectedResponseSha256", "invalidFields", "digest"],
+          "properties": {
+            "mode": { "enum": ["none", "format-completion", "full-rejudge"] },
+            "rejectedResponseSha256": {
+              "oneOf": [{ "$ref": "#/$defs/sha256" }, { "type": "null" }]
+            },
+            "invalidFields": {
+              "type": "array",
+              "maxItems": 16,
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 100,
+                "pattern": "^[a-z][a-zA-Z0-9._-]{0,99}$"
+              }
+            },
+            "digest": { "$ref": "#/$defs/sha256" }
+          },
+          "allOf": [
+            {
+              "if": { "properties": { "mode": { "const": "none" } } },
+              "then": {
+                "properties": {
+                  "rejectedResponseSha256": { "type": "null" },
+                  "invalidFields": { "type": "array", "maxItems": 0 }
+                }
+              }
+            },
+            {
+              "if": { "properties": { "mode": { "enum": ["format-completion", "full-rejudge"] } } },
+              "then": {
+                "properties": {
+                  "rejectedResponseSha256": { "$ref": "#/$defs/sha256" },
+                  "invalidFields": { "type": "array", "minItems": 1 }
+                }
+              }
+            }
+          ]
+        },
+        "invocationCount": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "invalidReason": {
+          "oneOf": [
+            { "type": "string", "minLength": 1, "maxLength": 500 },
+            { "type": "null" }
+          ]
+        },
+        "evaluatedAt": { "type": "string", "format": "date-time" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "valid" } } },
+          "then": {
+            "properties": {
+              "winnerLabel": { "enum": ["A", "B"] },
+              "revealedWinner": { "enum": ["incumbent", "candidate"] },
+              "invalidReason": { "type": "null" },
+              "invocationCount": { "type": "integer", "minimum": 1 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "tie" } } },
+          "then": {
+            "properties": {
+              "winnerLabel": { "type": "null" },
+              "revealedWinner": { "const": "tie" },
+              "invocationCount": { "type": "integer", "minimum": 1 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "status": { "const": "invalid" } } },
+          "then": {
+            "required": ["invalidReason"],
+            "properties": {
+              "winnerLabel": { "type": "null" },
+              "revealedWinner": { "const": "invalid" },
+              "invalidReason": { "type": "string", "minLength": 1 },
+              "invocationCount": { "const": 0 },
+              "validationRepair": {
+                "type": "object",
+                "properties": { "mode": { "const": "none" } }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "status": { "enum": ["valid", "tie"] },
+              "validationRepair": { "type": "object", "properties": { "mode": { "const": "none" } } }
+            }
+          },
+          "then": { "properties": { "invocationCount": { "const": 1 } } }
+        },
+        {
+          "if": {
+            "properties": {
+              "validationRepair": {
+                "type": "object",
+                "properties": { "mode": { "enum": ["format-completion", "full-rejudge"] } }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "status": { "enum": ["valid", "tie"] },
+              "invocationCount": { "const": 2 }
+            }
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scoreDelta", "decisionEvidenceDelta", "decision", "reasons"],
+      "properties": {
+        "scoreDelta": { "type": "number" },
+        "decisionEvidenceDelta": { "type": "integer" },
+        "decision": { "enum": ["promote", "reject"] },
+        "reasons": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["previousReceiptSha256"],
+      "properties": {
+        "previousReceiptSha256": {
+          "oneOf": [{ "$ref": "#/$defs/sha256" }, { "type": "null" }]
+        }
+      }
+    },
+    "integrity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["algorithm", "payloadSha256"],
+      "properties": {
+        "algorithm": { "const": "sha256-canonical-json-v1" },
+        "payloadSha256": { "$ref": "#/$defs/sha256" },
+        "ledgerHead": { "$ref": "#/$defs/sha256" },
+        "ledgerLength": { "type": "integer", "minimum": 1 },
+        "attestationReceiptId": { "type": "string", "minLength": 1, "maxLength": 300 }
+      },
+      "dependentRequired": {
+        "ledgerHead": ["ledgerLength", "attestationReceiptId"],
+        "ledgerLength": ["ledgerHead", "attestationReceiptId"],
+        "attestationReceiptId": ["ledgerHead", "ledgerLength"]
+      }
+    }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "critical", "passed", "observation"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "critical": { "type": "boolean" },
+        "passed": { "type": "boolean" },
+        "observation": { "type": "string", "minLength": 1 },
+        "artifactIds": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "taskComplete",
+        "decisionEvidenceCount",
+        "decisionEvidenceTarget",
+        "internalIdentifierCount",
+        "externalRequestCount",
+        "effectRequestCount",
+        "accessiblePrimaryControls",
+        "horizontalOverflowPixels",
+        "consoleErrorCount",
+        "offerEditable",
+        "draftOnly"
+      ],
+      "properties": {
+        "taskComplete": { "type": "boolean" },
+        "decisionEvidenceCount": { "type": "integer", "minimum": 0, "maximum": 4 },
+        "decisionEvidenceTarget": { "const": 4 },
+        "internalIdentifierCount": { "type": "integer", "minimum": 0 },
+        "externalRequestCount": { "type": "integer", "minimum": 0 },
+        "effectRequestCount": { "type": "integer", "minimum": 0 },
+        "accessiblePrimaryControls": { "type": "boolean" },
+        "horizontalOverflowPixels": { "type": "integer", "minimum": 0 },
+        "consoleErrorCount": { "type": "integer", "minimum": 0 },
+        "offerEditable": { "type": "boolean" },
+        "draftOnly": { "type": "boolean" }
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variant", "score", "metrics", "gates"],
+      "properties": {
+        "variant": { "enum": ["incumbent", "candidate"] },
+        "score": { "type": "number", "minimum": 0, "maximum": 100 },
+        "metrics": { "$ref": "#/$defs/metrics" },
+        "gates": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/gate" }
+        }
+      }
+    }
+  }
+}

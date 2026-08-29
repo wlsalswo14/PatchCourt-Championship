@@ -1,0 +1,57 @@
+{
+  "verdict": "REJECTED",
+  "approvedTokens": [
+    "bgCanvas: #F8F9FA / warm paper background",
+    "textPrimary: #17201d",
+    "accentJudgeBg: #e7f0ea",
+    "borderSubtle: #d9d8cf"
+  ],
+  "strengths": [
+    "All copy, fixture semantics, test attributes, and interactive task requirements for the John Smith local draft workflow are perfectly preserved.",
+    "The 4-part decision evidence layout (Audience, Verified channel, US market fit, Next action) maps directly to the evidence docket structure."
+  ],
+  "mismatches": [
+    {
+      "severity": "CRITICAL",
+      "screenshotEvidence": "In both desktop and mobile screenshots, the '.skip-link' ('Skip to content') is visible directly on top of content after preparing the draft, breaking visual hierarchy and focus flow.",
+      "exactSelector": ".skip-link",
+      "exactInstruction": "Ensure '.skip-link' remains positioned completely outside the viewport (e.g. top: -100px or visually-hidden offscreen) and only enters the viewport top when explicitly focused by keyboard navigation (`.skip-link:focus`)."
+    },
+    {
+      "severity": "HIGH",
+      "screenshotEvidence": "In mobile screenshot, the '.skip-link' overlaps 'RECOMMENDED NEXT STEP' / 'NEXT STEP' text inside the main content flow.",
+      "exactSelector": "body[data-variant=\"candidate\"] .skip-link",
+      "exactInstruction": "Add CSS rule `body[data-variant=\"candidate\"] .skip-link:not(:focus) { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }` to guarantee it never renders inside page flow unless keyboard focused."
+    },
+    {
+      "severity": "MEDIUM",
+      "screenshotEvidence": "In desktop screenshot, '.skip-link' floats over the first evidence card ('Audience').",
+      "exactSelector": "body[data-variant=\"candidate\"] .draft-status",
+      "exactInstruction": "After successful draft submission, ensure JS programmatically focuses `[data-testid='draft-status']` or its inner strong header rather than shifting viewport/DOM focus back to skip link or document top."
+    }
+  ],
+  "focusContract": {
+    "successFocusTarget": "[data-testid='draft-status']",
+    "focusBehavior": "Upon clicking 'Prepare draft — do not send', JS sets focus to `[data-testid='draft-status']` with `tabindex=\"-1\"`. The `.skip-link` element must remain visually hidden unless the user presses Tab from the top of the document DOM."
+  },
+  "mobileLayoutContract": {
+    "viewport": "390x844",
+    "overflowPolicy": "No horizontal scrolling (`overflow-x: hidden`). All primary actions ('Prepare draft — do not send') and inputs must be 100% full width within container margins.",
+    "touchTargets": "Minimum 44px vertical height for inputs, buttons, and close controls."
+  },
+  "candidateOnlyPatchPlan": [
+    "Add CSS rule `body[data-variant=\"candidate\"] .skip-link { position: absolute; top: -999px; left: 12px; z-index: 1000; } body[data-variant=\"candidate\"] .skip-link:focus { top: 12px; }` to styles.css.",
+    "In app.js, ensure `focusAfterRender = \"[data-testid='draft-status']\"` calls `.focus()` after DOM render without triggering scroll jumps to skip link."
+  ],
+  "doNotChange": [
+    "Do not change or alter data attributes (`data-testid`, `data-action`, `data-variant`).",
+    "Do not alter evidence text or mock data values ($1500, John Smith, 68% United States).",
+    "Do not alter the local-only draft behavior or attempt real API execution."
+  ],
+  "acceptanceChecklist": [
+    "Skip link is completely invisible until Tab is pressed at document load.",
+    "Submitting draft focuses `.draft-status` element smoothly.",
+    "No horizontal overflow on 390px mobile screen.",
+    "Candidate theme maintains warm editorial PatchCourt docket visual aesthetics."
+  ]
+}

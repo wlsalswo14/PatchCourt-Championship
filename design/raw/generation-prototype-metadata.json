@@ -1,0 +1,13 @@
+{
+  "model": "models/gemini-3.6-flash",
+  "mode": "prototype",
+  "startedAt": "2026-08-29T15:16:22.441Z",
+  "finishedAt": "2026-08-29T15:16:59.394Z",
+  "durationMs": 36953,
+  "requestCharacters": 20647,
+  "responseCharacters": 23017,
+  "finishReason": "STOP",
+  "promptTokens": 5904,
+  "outputTokens": 8342,
+  "outputFile": "gemini-3.6-flash-prototype.html"
+}

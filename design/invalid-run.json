@@ -1,0 +1,73 @@
+{
+  "verdict": "INVALID_RUN",
+  "semanticAccent": {
+    "color": "#111827",
+    "backgroundTint": "#F1F5F9",
+    "justification": "Ink-neutral tint. INVALID indicates an unfulfilled execution path, not a policy rejection (vermilion) or promotion (green/cobalt). Neutrality prevents mistaking infrastructure failure for a candidate verdict."
+  },
+  "exactKoreanCopy": {
+    "screenTitle": "판결불가 및 실행 무효 리포트",
+    "statusLabel": "실행 무효 (INVALID)",
+    "summaryMessage": "제공자 및 인프라 오류로 인해 평가가 완료되지 않았습니다. 현행 모델 상태가 유지됩니다.",
+    "retryButton": "로컬 재시도",
+    "replayButton": "검증된 리플레이로 이동"
+  },
+  "hero": {
+    "terminalRunId": "RUN-20260330-0841-X79",
+    "internalReceiptId": "RCPT-ERR-9902-INFRA",
+    "status": "INVALID",
+    "failureDetails": {
+      "stage": "BLIND_EVALUATION_INFERENCE",
+      "code": "PROVIDER_TIMEOUT_504",
+      "sanitizedMessage": "Upstream inference provider dropped WebSocket connection before candidate completed 50% of evaluation trace."
+    }
+  },
+  "truthRows": [
+    {
+      "label": "실행 판결",
+      "value": "판결 불가 (무효 종료)"
+    },
+    {
+      "label": "현행 모델 영향",
+      "value": "기존 승인 모델 유지 (승격/탈락 미발생)"
+    },
+    {
+      "label": "실행 증적",
+      "value": "Cluster: us-east-1a / Node: worker-p3-09"
+    }
+  ],
+  "prohibitedClaims": [
+    "후보 모델이 탈락(Rejected)되었다고 기재하지 않음",
+    "어느 한쪽을 승자(Winner)로 지칭하지 않음",
+    "점수, 13/13 게이트, 스코어링 아티팩트 노출 금지",
+    "본 리포트를 정식 승격/탈락 확정 영수증으로 명시하지 않음"
+  ],
+  "actions": [
+    {
+      "id": "action-retry",
+      "label": "로컬 재시도",
+      "type": "primary"
+    },
+    {
+      "id": "action-replay",
+      "label": "검증된 리플레이로 이동",
+      "type": "secondary"
+    }
+  ],
+  "mobileRules": {
+    "targetViewport": "390x844",
+    "minInteractiveTarget": "44px",
+    "layoutConstraint": "No horizontal overflow, 1px solid #111827 ruled borders, sharp 0px corners"
+  },
+  "accessibilityChecks": {
+    "ariaLive": "assertive",
+    "screenReaderAnnouncement": "오류: 실행이 무효 처리되었습니다. 제공자 타임아웃으로 인해 평가가 완료되지 않았습니다.",
+    "colorContrastRatio": "21:1 (Ink #111827 on Paper #F8F9FA)"
+  },
+  "acceptanceChecklist": {
+    "sharpCornersOnly": true,
+    "noGradientsOrEmojis": true,
+    "incumbentUnchanged": true,
+    "jsonCanonicalDownloadExcluded": true
+  }
+}

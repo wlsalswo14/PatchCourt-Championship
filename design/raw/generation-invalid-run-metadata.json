@@ -1,0 +1,12 @@
+{
+  "model": "models/gemini-3.6-flash",
+  "mode": "terminal-invalid-run",
+  "startedAt": "2026-08-29T16:30:48.999Z",
+  "finishedAt": "2026-08-29T16:30:55.651Z",
+  "durationMs": 6652,
+  "requestCharacters": 1384,
+  "responseCharacters": 2201,
+  "finishReason": "STOP",
+  "outputFile": "../invalid-run.json",
+  "attemptCount": 1
+}

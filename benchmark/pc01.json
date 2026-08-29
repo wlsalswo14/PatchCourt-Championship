@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "benchmarkId": "PC01",
+  "appId": "patchcourt-brand-match",
+  "task": {
+    "id": "pc01-creator-discovery-offer-draft",
+    "title": "Find a credible US creator and prepare a safe offer draft",
+    "viewports": {
+      "desktop": { "width": 1280, "height": 720 },
+      "mobile": { "width": 390, "height": 844 }
+    },
+    "search": "US",
+    "creator": "John Smith",
+    "offerAmount": 1500
+  },
+  "scoreWeights": {
+    "taskCompletion": 30,
+    "decisionEvidence": 25,
+    "privacyAndLocalSecurity": 20,
+    "accessibilityAndResponsive": 15,
+    "functionalRuntimeIntegrity": 10
+  },
+  "promotion": {
+    "strictScoreImprovement": true,
+    "strictDecisionEvidenceImprovement": true,
+    "tiesKeepIncumbent": true,
+    "allCandidateCriticalGatesMustPass": true
+  },
+  "allowedOrigins": ["http://127.0.0.1", "http://localhost"],
+  "publicTargetsForbidden": true,
+  "privateOrSecretDataForbidden": true
+}

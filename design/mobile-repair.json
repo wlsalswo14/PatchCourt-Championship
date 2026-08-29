@@ -1,0 +1,98 @@
+{
+  "verdict": "FAIL_MOBILE_GEOMETRY",
+  "repairedHeaderGeometry": {
+    "viewport": "390x844",
+    "headerHeight": "56px",
+    "padding": "0 12px",
+    "background": "#F8F9FA",
+    "borderBottom": "1px solid #E5E7EB"
+  },
+  "repairedNavigation": {
+    "containerHeight": "44px",
+    "itemHeight": "44px",
+    "fontSize": "13px",
+    "whiteSpace": "nowrap",
+    "overflowX": "auto",
+    "items": [
+      {
+        "label": "사건 목록",
+        "width": "auto",
+        "padding": "0 10px",
+        "isSelected": true
+      },
+      {
+        "label": "판례 분석",
+        "width": "auto",
+        "padding": "0 10px",
+        "isSelected": false
+      },
+      {
+        "label": "서면 작성",
+        "width": "auto",
+        "padding": "0 10px",
+        "isSelected": false
+      },
+      {
+        "label": "기일 관리",
+        "width": "auto",
+        "padding": "0 10px",
+        "isSelected": false
+      }
+    ]
+  },
+  "repairedRunRail": {
+    "counterText": "3 / 6 단계",
+    "containerHeight": "48px",
+    "overflowX": "scroll",
+    "scrollSnap": "x mandatory",
+    "fadeAffordance": "linear-gradient(90deg, rgba(248,249,250,0) 80%, #F8F9FA 100%)",
+    "activeStageIndex": 2,
+    "stages": [
+      {
+        "order": 1,
+        "label": "소장 접수",
+        "status": "complete"
+      },
+      {
+        "order": 2,
+        "label": "답변서 제출",
+        "status": "complete"
+      },
+      {
+        "order": 3,
+        "label": "변론 준비",
+        "status": "active"
+      },
+      {
+        "order": 4,
+        "label": "증거 조사",
+        "status": "upcoming"
+      },
+      {
+        "order": 5,
+        "label": "변론 종결",
+        "status": "upcoming"
+      },
+      {
+        "order": 6,
+        "label": "판결 선고",
+        "status": "upcoming"
+      }
+    ]
+  },
+  "exactCssRules": ".pc-header{display:flex;align-items:center;height:56px;padding:0 12px;background:#F8F9FA;border-bottom:1px solid #E5E7EB;overflow-x:auto;scrollbar-width:none}.pc-header::-webkit-scrollbar{display:none}.pc-nav-item{flex:0 0 auto;min-width:44px;height:44px;line-height:44px;padding:0 10px;font-size:13px;white-space:nowrap;color:#111827;border-radius:2px}.pc-nav-item[aria-current=\"page\"]{font-weight:700;border-bottom:2px solid #111827}.pc-rail-wrapper{position:relative;display:flex;align-items:center;height:48px;background:#F8F9FA;border-bottom:1px solid #E5E7EB}.pc-rail-counter{flex:0 0 auto;padding:0 12px;font-size:12px;font-weight:600;color:#4B5563}.pc-rail-scroll{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-right:24px;scrollbar-width:none}.pc-rail-scroll::-webkit-scrollbar{display:none}.pc-rail-item{flex:0 0 auto;scroll-snap-align:center;min-width:44px;height:44px;display:flex;align-items:center;padding:0 8px;white-space:nowrap;font-size:12px}.pc-rail-fade{position:absolute;right:0;top:0;bottom:0;width:24px;pointer-events:none;background:linear-gradient(90deg,rgba(248,249,250,0),#F8F9FA)}",
+  "reactBehavior": "const activeRef = useRef(null); useEffect(() => { activeRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); }, [activeStageIndex]);",
+  "accessibilityChecks": {
+    "minTouchTarget": "44px x 44px verified",
+    "colorContrast": "#111827 on #F8F9FA (16.5:1 ratio)",
+    "screenReader": "aria-current='page' on navigation, role='progressbar' with aria-valuenow=3 aria-valuemax=6 on rail"
+  },
+  "acceptanceChecklist": [
+    "Zero Korean single-character text wraps in header",
+    "All 4 navigation items accessible via smooth inline horizontal scroll",
+    "No hamburger menu introduced",
+    "Stage rail shows explicit '3 / 6 단계' counter and right-side visual gradient fade",
+    "Active stage automatically centered via scrollIntoView scroll-snap",
+    "Strict compliance with #F8F9FA canvas, #111827 ink, and 0-4px radii"
+  ]
+}

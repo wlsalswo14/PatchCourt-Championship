@@ -1,0 +1,716 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "receipt-pc01-rejection-20260829165222",
+  "runId": "pc01-rejection-20260829165222",
+  "benchmarkId": "PC01",
+  "appId": "patchcourt-brand-match",
+  "taskFingerprint": "49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef",
+  "createdAt": "2026-08-29T16:52:22.608Z",
+  "target": {
+    "origin": "http://127.0.0.1:42873",
+    "owned": true,
+    "loopbackOnly": true,
+    "externalRequestsBlocked": true
+  },
+  "source": {
+    "incumbentSha256": "160a425a3cbce74035a86408c76559cd4653283f7e29a1f84cf34d3abd3ae338",
+    "candidateSha256": "f2c0121fac6ba587c1aa7a18a452b281f9e029a5c8d90aac03e989fa6a4d7283",
+    "patchSha256": "7506f74dd2500298ca662660be8c78944f58c7a589ef97041e9c6bbf419f976a",
+    "factsSha256": "c1fc28e2027abda3b717cc971f3865d0e6686ea9b82c9b38bcbd099c1787fb90"
+  },
+  "execution": {
+    "mode": "offline-demo",
+    "criticProvider": "patchcourt:browser-metrics-v1",
+    "patchProvider": "patchcourt:owned-fixture-rejection-css-v1",
+    "judgeProvider": "patchcourt:deterministic-blind-scorecard-v1",
+    "model": null
+  },
+  "criticProvenance": {
+    "entries": [
+      {
+        "criticId": "patchcourt:browser-decision-evidence-critic-v1",
+        "proposedCount": 1,
+        "acceptedCount": 1,
+        "rejectedCount": 0
+      },
+      {
+        "criticId": "patchcourt:browser-privacy-critic-v1",
+        "proposedCount": 1,
+        "acceptedCount": 1,
+        "rejectedCount": 0
+      },
+      {
+        "criticId": "patchcourt:browser-responsive-critic-v1",
+        "proposedCount": 1,
+        "acceptedCount": 1,
+        "rejectedCount": 0
+      }
+    ],
+    "acceptedCriticIdsDigest": "12feae29fc4fb6d12a2c89588670d933b0954a5ad89ea9e2050c0908faff1b35",
+    "digest": "e02eb16a9b680b004b52cded5b5b9763e42d5388a1192648b7955c1aa70e18d6"
+  },
+  "artifacts": [
+    {
+      "id": "rejection-incumbent-desktop-profile",
+      "kind": "screenshot",
+      "label": "rejection run incumbent desktop profile",
+      "uri": "docs/evidence/rejection/rejection-incumbent-desktop-profile.png",
+      "sha256": "fa1ef9989a364c8cb333908193f59d7095b7cda2e869883355162ede00d137c1",
+      "stepId": "inspect",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-desktop-draft",
+      "kind": "screenshot",
+      "label": "rejection run incumbent desktop draft and responsive gate",
+      "uri": "docs/evidence/rejection/rejection-incumbent-desktop-draft.png",
+      "sha256": "35ff74bef6de8506569c98ab6acfa99bd0ed5cac5d5d7fb60d27bfdd036c547b",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-desktop-dom",
+      "kind": "dom",
+      "label": "rejection run incumbent desktop sanitized DOM metrics",
+      "uri": "docs/evidence/rejection/rejection-incumbent-desktop-dom.json",
+      "sha256": "923e7f3d8da6bf9588854159475b2de0f5749cff2556bc093747d11818cb5d44",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-desktop-accessibility",
+      "kind": "accessibility",
+      "label": "rejection run incumbent desktop accessibility and overflow snapshot",
+      "uri": "docs/evidence/rejection/rejection-incumbent-desktop-accessibility.json",
+      "sha256": "50ff87e098bb86cc27bd66746e62edc01e24d171467a6e65cb00a6aacc805979",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-desktop-console",
+      "kind": "console",
+      "label": "rejection run incumbent desktop console observations",
+      "uri": "docs/evidence/rejection/rejection-incumbent-desktop-console.json",
+      "sha256": "72b225aa3571b5e90ac6ffe3ce2f14dcf92acd7ab4756ca9a441c4bdd16780c0",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-desktop-network",
+      "kind": "network",
+      "label": "rejection run incumbent desktop network and effect observations",
+      "uri": "docs/evidence/rejection/rejection-incumbent-desktop-network.json",
+      "sha256": "abd98ce3f7d682ff34f2ec2a38b7e9e03615e478c98ff1ed6c0f92db140c680c",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-mobile-profile",
+      "kind": "screenshot",
+      "label": "rejection run incumbent mobile profile",
+      "uri": "docs/evidence/rejection/rejection-incumbent-mobile-profile.png",
+      "sha256": "b1882c05a3d780ad4940693fd009c3f18b635644ed122de95826ef436a2e3f96",
+      "stepId": "inspect",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-mobile-draft",
+      "kind": "screenshot",
+      "label": "rejection run incumbent mobile draft and responsive gate",
+      "uri": "docs/evidence/rejection/rejection-incumbent-mobile-draft.png",
+      "sha256": "7a2a5e6df4ae5a5785d5ba10633b4586b238206e747649b5f74e81582a91fbf5",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-mobile-dom",
+      "kind": "dom",
+      "label": "rejection run incumbent mobile sanitized DOM metrics",
+      "uri": "docs/evidence/rejection/rejection-incumbent-mobile-dom.json",
+      "sha256": "9c044a4581e43a9a783070efe85fdf3b2aa3a603aff4fdc224b0d9d5ec988c3a",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-mobile-accessibility",
+      "kind": "accessibility",
+      "label": "rejection run incumbent mobile accessibility and overflow snapshot",
+      "uri": "docs/evidence/rejection/rejection-incumbent-mobile-accessibility.json",
+      "sha256": "ef2d9b9ab5d60748a16b56fcfd48ac88f2c57ac0914eed97eb21bd8672f4bbf1",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-mobile-console",
+      "kind": "console",
+      "label": "rejection run incumbent mobile console observations",
+      "uri": "docs/evidence/rejection/rejection-incumbent-mobile-console.json",
+      "sha256": "72b225aa3571b5e90ac6ffe3ce2f14dcf92acd7ab4756ca9a441c4bdd16780c0",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-incumbent-mobile-network",
+      "kind": "network",
+      "label": "rejection run incumbent mobile network and effect observations",
+      "uri": "docs/evidence/rejection/rejection-incumbent-mobile-network.json",
+      "sha256": "abd98ce3f7d682ff34f2ec2a38b7e9e03615e478c98ff1ed6c0f92db140c680c",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-desktop-profile",
+      "kind": "screenshot",
+      "label": "rejection run candidate desktop profile",
+      "uri": "docs/evidence/rejection/rejection-candidate-desktop-profile.png",
+      "sha256": "78372d705ca86403f07861a3b69e8f2de6534fc6c3d5112e7f1ae8a87740c944",
+      "stepId": "inspect",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-desktop-draft",
+      "kind": "screenshot",
+      "label": "rejection run candidate desktop draft and responsive gate",
+      "uri": "docs/evidence/rejection/rejection-candidate-desktop-draft.png",
+      "sha256": "bc66ec1a2b5c28d473cccd003b9d486ae835fc8cb585027af6c3dd0b2029aaac",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-desktop-dom",
+      "kind": "dom",
+      "label": "rejection run candidate desktop sanitized DOM metrics",
+      "uri": "docs/evidence/rejection/rejection-candidate-desktop-dom.json",
+      "sha256": "8a129cd43c2fbd094fbd0605bd9572c413d409aa93c8daf999ea853ed1c4c1bf",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-desktop-accessibility",
+      "kind": "accessibility",
+      "label": "rejection run candidate desktop accessibility and overflow snapshot",
+      "uri": "docs/evidence/rejection/rejection-candidate-desktop-accessibility.json",
+      "sha256": "50ff87e098bb86cc27bd66746e62edc01e24d171467a6e65cb00a6aacc805979",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-desktop-console",
+      "kind": "console",
+      "label": "rejection run candidate desktop console observations",
+      "uri": "docs/evidence/rejection/rejection-candidate-desktop-console.json",
+      "sha256": "72b225aa3571b5e90ac6ffe3ce2f14dcf92acd7ab4756ca9a441c4bdd16780c0",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-desktop-network",
+      "kind": "network",
+      "label": "rejection run candidate desktop network and effect observations",
+      "uri": "docs/evidence/rejection/rejection-candidate-desktop-network.json",
+      "sha256": "3235ab1e8205ab1f35d2ec29f6418d5ce3a1715a8bacd4f7264d634c42ac390c",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-mobile-profile",
+      "kind": "screenshot",
+      "label": "rejection run candidate mobile profile",
+      "uri": "docs/evidence/rejection/rejection-candidate-mobile-profile.png",
+      "sha256": "0ea83a0f771d21980e306af65fc9c5052234025b8671d0d1e162eb79494530c5",
+      "stepId": "inspect",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-mobile-draft",
+      "kind": "screenshot",
+      "label": "rejection run candidate mobile draft and responsive gate",
+      "uri": "docs/evidence/rejection/rejection-candidate-mobile-draft.png",
+      "sha256": "c4ad296b4bfc45b1f4b70bc7ea5578b479d97b4a68f51d4c794ff41a005d85ad",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-mobile-dom",
+      "kind": "dom",
+      "label": "rejection run candidate mobile sanitized DOM metrics",
+      "uri": "docs/evidence/rejection/rejection-candidate-mobile-dom.json",
+      "sha256": "5e04490b1fd8944cb76e813cb5708565668b9952ab1fc2ca65b15baa00722dd1",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-mobile-accessibility",
+      "kind": "accessibility",
+      "label": "rejection run candidate mobile accessibility and overflow snapshot",
+      "uri": "docs/evidence/rejection/rejection-candidate-mobile-accessibility.json",
+      "sha256": "f0d47f6e5076aad28abcd6d69abde84d949040ebff11fee463ae08ee11bb8a71",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-mobile-console",
+      "kind": "console",
+      "label": "rejection run candidate mobile console observations",
+      "uri": "docs/evidence/rejection/rejection-candidate-mobile-console.json",
+      "sha256": "72b225aa3571b5e90ac6ffe3ce2f14dcf92acd7ab4756ca9a441c4bdd16780c0",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    },
+    {
+      "id": "rejection-candidate-mobile-network",
+      "kind": "network",
+      "label": "rejection run candidate mobile network and effect observations",
+      "uri": "docs/evidence/rejection/rejection-candidate-mobile-network.json",
+      "sha256": "7eb9dc2d35631b50afcbdf2b16d05147684b34e8795d810ae1a7a090eefe4cc7",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:22.608Z"
+    }
+  ],
+  "evaluations": {
+    "incumbent": {
+      "variant": "incumbent",
+      "score": 40,
+      "metrics": {
+        "taskComplete": true,
+        "decisionEvidenceCount": 0,
+        "decisionEvidenceTarget": 4,
+        "internalIdentifierCount": 4,
+        "externalRequestCount": 0,
+        "effectRequestCount": 0,
+        "accessiblePrimaryControls": true,
+        "horizontalOverflowPixels": 104,
+        "consoleErrorCount": 0,
+        "offerEditable": true,
+        "draftOnly": true
+      },
+      "gates": [
+        {
+          "id": "owned_local_target",
+          "critical": true,
+          "passed": true,
+          "observation": "http://127.0.0.1:42873",
+          "artifactIds": []
+        },
+        {
+          "id": "same_task_fingerprint",
+          "critical": true,
+          "passed": true,
+          "observation": "49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef",
+          "artifactIds": []
+        },
+        {
+          "id": "brand_demo_login",
+          "critical": true,
+          "passed": true,
+          "observation": "Signed-in home reached",
+          "artifactIds": []
+        },
+        {
+          "id": "directory_search",
+          "critical": true,
+          "passed": true,
+          "observation": "US returned John Smith",
+          "artifactIds": []
+        },
+        {
+          "id": "profile_open",
+          "critical": true,
+          "passed": true,
+          "observation": "John Smith profile opened",
+          "artifactIds": [
+            "rejection-incumbent-desktop-profile",
+            "rejection-incumbent-desktop-draft",
+            "rejection-incumbent-desktop-dom",
+            "rejection-incumbent-desktop-accessibility",
+            "rejection-incumbent-desktop-console",
+            "rejection-incumbent-desktop-network",
+            "rejection-incumbent-mobile-profile",
+            "rejection-incumbent-mobile-draft",
+            "rejection-incumbent-mobile-dom",
+            "rejection-incumbent-mobile-accessibility",
+            "rejection-incumbent-mobile-console",
+            "rejection-incumbent-mobile-network"
+          ]
+        },
+        {
+          "id": "decision_evidence_complete",
+          "critical": true,
+          "passed": false,
+          "observation": "0/4 signals",
+          "artifactIds": [
+            "rejection-incumbent-desktop-profile",
+            "rejection-incumbent-desktop-draft",
+            "rejection-incumbent-desktop-dom",
+            "rejection-incumbent-desktop-accessibility",
+            "rejection-incumbent-desktop-console",
+            "rejection-incumbent-desktop-network",
+            "rejection-incumbent-mobile-profile",
+            "rejection-incumbent-mobile-draft",
+            "rejection-incumbent-mobile-dom",
+            "rejection-incumbent-mobile-accessibility",
+            "rejection-incumbent-mobile-console",
+            "rejection-incumbent-mobile-network"
+          ]
+        },
+        {
+          "id": "offer_fields_editable",
+          "critical": true,
+          "passed": true,
+          "observation": "Message and fee accepted edits",
+          "artifactIds": []
+        },
+        {
+          "id": "draft_not_sent",
+          "critical": true,
+          "passed": true,
+          "observation": "effect requests=0",
+          "artifactIds": [
+            "rejection-incumbent-desktop-profile",
+            "rejection-incumbent-desktop-draft",
+            "rejection-incumbent-desktop-dom",
+            "rejection-incumbent-desktop-accessibility",
+            "rejection-incumbent-desktop-console",
+            "rejection-incumbent-desktop-network",
+            "rejection-incumbent-mobile-profile",
+            "rejection-incumbent-mobile-draft",
+            "rejection-incumbent-mobile-dom",
+            "rejection-incumbent-mobile-accessibility",
+            "rejection-incumbent-mobile-console",
+            "rejection-incumbent-mobile-network"
+          ]
+        },
+        {
+          "id": "no_internal_identifier_exposure",
+          "critical": true,
+          "passed": false,
+          "observation": "internal patterns=4",
+          "artifactIds": [
+            "rejection-incumbent-desktop-profile",
+            "rejection-incumbent-desktop-draft",
+            "rejection-incumbent-desktop-dom",
+            "rejection-incumbent-desktop-accessibility",
+            "rejection-incumbent-desktop-console",
+            "rejection-incumbent-desktop-network",
+            "rejection-incumbent-mobile-profile",
+            "rejection-incumbent-mobile-draft",
+            "rejection-incumbent-mobile-dom",
+            "rejection-incumbent-mobile-accessibility",
+            "rejection-incumbent-mobile-console",
+            "rejection-incumbent-mobile-network"
+          ]
+        },
+        {
+          "id": "accessible_primary_controls",
+          "critical": true,
+          "passed": true,
+          "observation": "Primary control names resolved",
+          "artifactIds": []
+        },
+        {
+          "id": "responsive_primary_action",
+          "critical": true,
+          "passed": false,
+          "observation": "maximum overflow=104px",
+          "artifactIds": [
+            "rejection-incumbent-desktop-profile",
+            "rejection-incumbent-desktop-draft",
+            "rejection-incumbent-desktop-dom",
+            "rejection-incumbent-desktop-accessibility",
+            "rejection-incumbent-desktop-console",
+            "rejection-incumbent-desktop-network",
+            "rejection-incumbent-mobile-profile",
+            "rejection-incumbent-mobile-draft",
+            "rejection-incumbent-mobile-dom",
+            "rejection-incumbent-mobile-accessibility",
+            "rejection-incumbent-mobile-console",
+            "rejection-incumbent-mobile-network"
+          ]
+        },
+        {
+          "id": "console_and_network_clean",
+          "critical": true,
+          "passed": true,
+          "observation": "console=0; external=0",
+          "artifactIds": []
+        },
+        {
+          "id": "artifact_integrity",
+          "critical": true,
+          "passed": true,
+          "observation": "Artifacts hashed after capture",
+          "artifactIds": [
+            "rejection-incumbent-desktop-profile",
+            "rejection-incumbent-desktop-draft",
+            "rejection-incumbent-desktop-dom",
+            "rejection-incumbent-desktop-accessibility",
+            "rejection-incumbent-desktop-console",
+            "rejection-incumbent-desktop-network",
+            "rejection-incumbent-mobile-profile",
+            "rejection-incumbent-mobile-draft",
+            "rejection-incumbent-mobile-dom",
+            "rejection-incumbent-mobile-accessibility",
+            "rejection-incumbent-mobile-console",
+            "rejection-incumbent-mobile-network"
+          ]
+        }
+      ]
+    },
+    "candidate": {
+      "variant": "candidate",
+      "score": 85,
+      "metrics": {
+        "taskComplete": true,
+        "decisionEvidenceCount": 4,
+        "decisionEvidenceTarget": 4,
+        "internalIdentifierCount": 0,
+        "externalRequestCount": 0,
+        "effectRequestCount": 0,
+        "accessiblePrimaryControls": true,
+        "horizontalOverflowPixels": 78,
+        "consoleErrorCount": 0,
+        "offerEditable": true,
+        "draftOnly": true
+      },
+      "gates": [
+        {
+          "id": "owned_local_target",
+          "critical": true,
+          "passed": true,
+          "observation": "http://127.0.0.1:42873",
+          "artifactIds": []
+        },
+        {
+          "id": "same_task_fingerprint",
+          "critical": true,
+          "passed": true,
+          "observation": "49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef",
+          "artifactIds": []
+        },
+        {
+          "id": "brand_demo_login",
+          "critical": true,
+          "passed": true,
+          "observation": "Signed-in home reached",
+          "artifactIds": []
+        },
+        {
+          "id": "directory_search",
+          "critical": true,
+          "passed": true,
+          "observation": "US returned John Smith",
+          "artifactIds": []
+        },
+        {
+          "id": "profile_open",
+          "critical": true,
+          "passed": true,
+          "observation": "John Smith profile opened",
+          "artifactIds": [
+            "rejection-candidate-desktop-profile",
+            "rejection-candidate-desktop-draft",
+            "rejection-candidate-desktop-dom",
+            "rejection-candidate-desktop-accessibility",
+            "rejection-candidate-desktop-console",
+            "rejection-candidate-desktop-network",
+            "rejection-candidate-mobile-profile",
+            "rejection-candidate-mobile-draft",
+            "rejection-candidate-mobile-dom",
+            "rejection-candidate-mobile-accessibility",
+            "rejection-candidate-mobile-console",
+            "rejection-candidate-mobile-network"
+          ]
+        },
+        {
+          "id": "decision_evidence_complete",
+          "critical": true,
+          "passed": true,
+          "observation": "4/4 signals",
+          "artifactIds": [
+            "rejection-candidate-desktop-profile",
+            "rejection-candidate-desktop-draft",
+            "rejection-candidate-desktop-dom",
+            "rejection-candidate-desktop-accessibility",
+            "rejection-candidate-desktop-console",
+            "rejection-candidate-desktop-network",
+            "rejection-candidate-mobile-profile",
+            "rejection-candidate-mobile-draft",
+            "rejection-candidate-mobile-dom",
+            "rejection-candidate-mobile-accessibility",
+            "rejection-candidate-mobile-console",
+            "rejection-candidate-mobile-network"
+          ]
+        },
+        {
+          "id": "offer_fields_editable",
+          "critical": true,
+          "passed": true,
+          "observation": "Message and fee accepted edits",
+          "artifactIds": []
+        },
+        {
+          "id": "draft_not_sent",
+          "critical": true,
+          "passed": true,
+          "observation": "effect requests=0",
+          "artifactIds": [
+            "rejection-candidate-desktop-profile",
+            "rejection-candidate-desktop-draft",
+            "rejection-candidate-desktop-dom",
+            "rejection-candidate-desktop-accessibility",
+            "rejection-candidate-desktop-console",
+            "rejection-candidate-desktop-network",
+            "rejection-candidate-mobile-profile",
+            "rejection-candidate-mobile-draft",
+            "rejection-candidate-mobile-dom",
+            "rejection-candidate-mobile-accessibility",
+            "rejection-candidate-mobile-console",
+            "rejection-candidate-mobile-network"
+          ]
+        },
+        {
+          "id": "no_internal_identifier_exposure",
+          "critical": true,
+          "passed": true,
+          "observation": "internal patterns=0",
+          "artifactIds": [
+            "rejection-candidate-desktop-profile",
+            "rejection-candidate-desktop-draft",
+            "rejection-candidate-desktop-dom",
+            "rejection-candidate-desktop-accessibility",
+            "rejection-candidate-desktop-console",
+            "rejection-candidate-desktop-network",
+            "rejection-candidate-mobile-profile",
+            "rejection-candidate-mobile-draft",
+            "rejection-candidate-mobile-dom",
+            "rejection-candidate-mobile-accessibility",
+            "rejection-candidate-mobile-console",
+            "rejection-candidate-mobile-network"
+          ]
+        },
+        {
+          "id": "accessible_primary_controls",
+          "critical": true,
+          "passed": true,
+          "observation": "Primary control names resolved",
+          "artifactIds": []
+        },
+        {
+          "id": "responsive_primary_action",
+          "critical": true,
+          "passed": false,
+          "observation": "maximum overflow=78px",
+          "artifactIds": [
+            "rejection-candidate-desktop-profile",
+            "rejection-candidate-desktop-draft",
+            "rejection-candidate-desktop-dom",
+            "rejection-candidate-desktop-accessibility",
+            "rejection-candidate-desktop-console",
+            "rejection-candidate-desktop-network",
+            "rejection-candidate-mobile-profile",
+            "rejection-candidate-mobile-draft",
+            "rejection-candidate-mobile-dom",
+            "rejection-candidate-mobile-accessibility",
+            "rejection-candidate-mobile-console",
+            "rejection-candidate-mobile-network"
+          ]
+        },
+        {
+          "id": "console_and_network_clean",
+          "critical": true,
+          "passed": true,
+          "observation": "console=0; external=0",
+          "artifactIds": []
+        },
+        {
+          "id": "artifact_integrity",
+          "critical": true,
+          "passed": true,
+          "observation": "Artifacts hashed after capture",
+          "artifactIds": [
+            "rejection-candidate-desktop-profile",
+            "rejection-candidate-desktop-draft",
+            "rejection-candidate-desktop-dom",
+            "rejection-candidate-desktop-accessibility",
+            "rejection-candidate-desktop-console",
+            "rejection-candidate-desktop-network",
+            "rejection-candidate-mobile-profile",
+            "rejection-candidate-mobile-draft",
+            "rejection-candidate-mobile-dom",
+            "rejection-candidate-mobile-accessibility",
+            "rejection-candidate-mobile-console",
+            "rejection-candidate-mobile-network"
+          ]
+        }
+      ]
+    }
+  },
+  "blindComparison": {
+    "protocolVersion": 1,
+    "orderCommitmentSha256": "984cb561b425637e3c153ad0580ef6b612476cd7878a5555e7292cf8d139adef",
+    "status": "invalid",
+    "winnerLabel": null,
+    "revealedWinner": "invalid",
+    "mappingReveal": {
+      "A": "candidate",
+      "B": "incumbent",
+      "nonce": "b8NzqMoBDVut0k-meYZtf1ie"
+    },
+    "judge": {
+      "kind": "deterministic",
+      "provider": "patchcourt-local",
+      "model": "not-called-critical-gate-v1",
+      "responseId": null,
+      "reasoningEffort": null
+    },
+    "validationRepair": {
+      "mode": "none",
+      "rejectedResponseSha256": null,
+      "invalidFields": [],
+      "digest": "af2dbff091244021c1bcab47631531181bda93d251ebcfecdc69c082b99440b4"
+    },
+    "invocationCount": 0,
+    "invalidReason": "not_called:critical_gate_failed:responsive_primary_action",
+    "evaluatedAt": "2026-08-29T16:52:22.608Z"
+  },
+  "comparison": {
+    "scoreDelta": 45,
+    "decisionEvidenceDelta": 4,
+    "decision": "reject",
+    "reasons": [
+      "critical_gate_failed:responsive_primary_action",
+      "blind_judge_invalid_evidence"
+    ]
+  },
+  "lineage": {
+    "previousReceiptSha256": "46a428648280090559180cf4eb3016bcfab5a1bd96ff85db5e25282e2110f83f"
+  },
+  "integrity": {
+    "algorithm": "sha256-canonical-json-v1",
+    "payloadSha256": "4b33f1dc7922eab724c96b28397ee3e035b06799bbf022aaac231be8853dcb08"
+  }
+}

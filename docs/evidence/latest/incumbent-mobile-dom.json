@@ -1,0 +1,19 @@
+{
+  "page": "/incumbent",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "creator": "John Smith",
+  "search": "US",
+  "followers": "0 followers",
+  "evidence": {
+    "audience": "Audience\n      TBD\n      Audience summary is not available.",
+    "channel": "Verified channel\n      youtube-oauth2\n      connection=true",
+    "market-fit": "US market fit\n      market == US && category=tech\n      score_rule_v2: 0.82",
+    "next-action": "Next action\n      Send offer\n      Proceed with the default template."
+  },
+  "providerDebugVisible": true,
+  "draftStatus": "Draft ready — not sent\nFee saved as $1500. No external action occurred.",
+  "horizontalOverflowPixels": 104
+}

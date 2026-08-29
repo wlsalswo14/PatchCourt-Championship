@@ -1,0 +1,169 @@
+{
+  "consoleEntries": [
+    {
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "type": "info",
+      "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"
+    },
+    {
+      "type": "debug",
+      "text": "[vite] connected."
+    }
+  ],
+  "requests": [
+    {
+      "method": "GET",
+      "resourceType": "document",
+      "url": "http://127.0.0.1:65341/"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/@vite/client"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/main.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/@react-refresh"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/node_modules/.vite/deps/react.js?v=a0b29d6c"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/node_modules/.vite/deps/react-dom_client.js?v=a0b29d6c"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/App.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/styles.css"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=a0b29d6c"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/node_modules/.vite/deps/rolldown-runtime-BvCyGRYZ.js?v=a0b29d6c"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/components/AppShell.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/data/recordedRun.ts"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/features/comparison/BlindComparison.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/features/evidence/EvidenceCourt.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/features/live/LivePending.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/features/receipt/ChampionReceipt.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/features/receipt/InvalidRunReport.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/features/receipt/RejectionReceipt.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/features/trial/TrialDashboard.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/lib/runAdapter.ts"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/components/Icon.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/components/RunRail.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/config.ts"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/data/pc01-receipt.json?import"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/data/pc01-rejection-receipt.json?import"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/lib/assets.ts"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/components/StatusBadge.tsx"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/src/lib/format.ts"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "http://127.0.0.1:65341/node_modules/.vite/deps/react-dom.js?v=a0b29d6c"
+    },
+    {
+      "method": "GET",
+      "resourceType": "script",
+      "url": "artifact://local-vite-module"
+    }
+  ],
+  "failedRequests": []
+}

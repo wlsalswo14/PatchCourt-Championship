@@ -1,0 +1,12 @@
+{
+  "model": "models/gemini-3.6-flash",
+  "mode": "mobile-concept-repair",
+  "startedAt": "2026-08-29T15:46:01.855Z",
+  "finishedAt": "2026-08-29T15:46:11.577Z",
+  "durationMs": 9722,
+  "requestCharacters": 1097,
+  "responseCharacters": 3456,
+  "finishReason": "STOP",
+  "outputFile": "../mobile-repair.json",
+  "attemptCount": 1
+}

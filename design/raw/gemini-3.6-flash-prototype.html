@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PATCHCOURT — AI Patch Trial Workspace</title>
+<style>
+:root {
+  --bg-canvas: #F8F9FA;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F3F4F6;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --text-muted: #9CA3AF;
+  --border-subtle: #E5E7EB;
+  --border-strong: #111827;
+  --accent-prosecution: #DC2626;
+  --accent-prosecution-bg: #FEF2F2;
+  --accent-defense: #2563EB;
+  --accent-defense-bg: #EFF6FF;
+  --accent-judge: #059669;
+  --accent-judge-bg: #ECFDF5;
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg-canvas); color: var(--text-primary); font-family: var(--font-sans); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* Layout Grid & Containers */
+.app-header { background: var(--bg-surface); border-bottom: 1px solid var(--border-strong); height: 56px; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+.brand { font-weight: 900; font-size: 18px; letter-spacing: 0.05em; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+.brand-tag { font-size: 10px; background: var(--text-primary); color: #FFF; padding: 2px 6px; font-weight: 700; font-family: var(--font-mono); }
+.nav-group { display: flex; gap: 2px; background: var(--bg-subtle); padding: 3px; border: 1px solid var(--border-subtle); }
+.nav-btn { padding: 6px 16px; font-size: 13px; font-weight: 600; color: var(--text-secondary); border-radius: 2px; transition: all 0.15s ease; }
+.nav-btn.active { background: var(--bg-surface); color: var(--text-primary); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+
+.sub-header { background: var(--bg-surface); border-bottom: 1px solid var(--border-subtle); padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; }
+.workspace-badge { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; }
+.workspace-badge::before { content: ''; display: inline-block; width: 8px; height: 8px; background: var(--accent-judge); }
+
+/* Run Rail */
+.run-rail { display: flex; gap: 8px; width: 100%; max-width: 1440px; margin: 0 auto; padding: 16px 24px; }
+.rail-step { flex: 1; background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 10px 12px; display: flex; align-items: center; gap: 10px; opacity: 0.6; transition: all 0.2s; }
+.rail-step.active { opacity: 1; border-color: var(--border-strong); background: #FFF; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+.rail-step.passed { opacity: 1; border-color: var(--accent-judge); background: var(--accent-judge-bg); }
+.step-num { font-family: var(--font-mono); font-size: 11px; font-weight: 700; width: 20px; height: 20px; border: 1px solid currentColor; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-label { font-size: 13px; font-weight: 700; flex: 1; }
+
+/* Main Content Views */
+.view-container { max-width: 1440px; margin: 0 auto; padding: 0 24px 40px; display: none; }
+.view-container.active { display: block; }
+
+/* Typography & Docket Components */
+.heading-docket { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 4px; }
+.subtext-docket { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; }
+
+.docket-grid { display: grid; grid-template-columns: 420px 1fr; gap: 24px; }
+.panel-box { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 24px; }
+.field-label { font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 6px; }
+.field-value { font-size: 13px; font-family: var(--font-mono); background: var(--bg-subtle); padding: 8px 12px; border: 1px solid var(--border-subtle); word-break: break-all; margin-bottom: 16px; }
+
+.btn-primary { background: var(--border-strong); color: #FFF; padding: 12px 20px; font-weight: 700; font-size: 14px; width: 100%; border: 1px solid var(--border-strong); transition: background 0.15s; }
+.btn-primary:hover { background: #374151; }
+.btn-secondary { background: var(--bg-surface); color: var(--text-primary); padding: 12px 20px; font-weight: 700; font-size: 14px; width: 100%; border: 1px solid var(--border-strong); margin-top: 8px; transition: background 0.15s; }
+.btn-secondary:hover { background: var(--bg-subtle); }
+
+/* Live Stream Log */
+.stream-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-strong); padding-bottom: 12px; margin-bottom: 16px; font-weight: 800; }
+.log-list { font-family: var(--font-mono); font-size: 12px; display: flex; flex-col; gap: 8px; max-height: 480px; overflow-y: auto; }
+.log-item { padding: 8px 12px; border-left: 2px solid var(--border-subtle); background: var(--bg-subtle); display: flex; gap: 12px; }
+.log-item.highlight { border-left-color: var(--accent-prosecution); background: var(--accent-prosecution-bg); }
+.log-time { color: var(--text-muted); flex-shrink: 0; }
+
+/* Evidence Court View */
+.court-layout { display: grid; grid-template-columns: 1fr 480px; gap: 24px; }
+.frame-viewport { background: #1E293B; border: 1px solid var(--border-strong); position: relative; aspect-ratio: 16/10; overflow: hidden; }
+.frame-mock { background: #FFF; width: 100%; height: 100%; padding: 24px; position: relative; font-family: var(--font-sans); }
+.mock-header { font-size: 18px; font-weight: 800; padding-bottom: 12px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 16px; display: flex; justify-content: space-between; }
+.mock-card { border: 1px solid var(--border-subtle); padding: 16px; margin-bottom: 12px; position: relative; }
+
+/* Pin Markers */
+.pin-marker { position: absolute; width: 28px; height: 28px; background: var(--accent-prosecution); color: #FFF; font-family: var(--font-mono); font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; border: 2px solid #FFF; box-shadow: 0 2px 6px rgba(0,0,0,0.3); cursor: pointer; z-index: 10; animation: pulse 2s infinite; }
+.pin-marker.p2 { background: var(--accent-defense); }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+
+/* Docket Sheet */
+.ruled-sheet { background: var(--bg-surface); border: 1px solid var(--border-strong); padding: 24px; }
+.argument-box { padding: 12px 16px; margin-bottom: 16px; border-left: 3px solid var(--border-subtle); }
+.argument-box.prosecution { border-left-color: var(--accent-prosecution); background: var(--accent-prosecution-bg); }
+.argument-box.defense { border-left-color: var(--accent-defense); background: var(--accent-defense-bg); }
+.argument-box.judge { border-left-color: var(--accent-judge); background: var(--accent-judge-bg); }
+.arg-role { font-family: var(--font-mono); font-size: 11px; font-weight: 800; margin-bottom: 4px; display: flex; justify-content: space-between; }
+.arg-role.prosecution { color: var(--accent-prosecution); }
+.arg-role.defense { color: var(--accent-defense); }
+.arg-role.judge { color: var(--accent-judge); }
+
+/* Comparison Grid */
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+.variant-card { background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 20px; transition: border-color 0.3s; }
+.variant-card.champion { border: 2px solid var(--accent-judge); }
+.variant-tag { font-family: var(--font-mono); font-size: 12px; font-weight: 700; margin-bottom: 12px; display: inline-block; padding: 2px 8px; background: var(--bg-subtle); }
+
+/* Gate Matrix */
+.gate-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 13px; }
+.gate-table th, .gate-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-subtle); text-align: left; }
+.gate-table th { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); background: var(--bg-subtle); }
+.badge-status { font-family: var(--font-mono); font-size: 11px; font-weight: 700; padding: 2px 8px; display: inline-block; }
+.badge-pass { background: var(--accent-judge-bg); color: var(--accent-judge); border: 1px solid var(--accent-judge); }
+.badge-fail { background: var(--accent-prosecution-bg); color: var(--accent-prosecution); border: 1px solid var(--accent-prosecution); }
+.badge-pending { background: var(--bg-subtle); color: var(--text-muted); border: 1px solid var(--border-subtle); }
+
+/* Champion Receipt */
+.receipt-wrapper { max-width: 680px; margin: 20px auto 0; background: var(--bg-surface); border: 2px solid var(--border-strong); padding: 40px; box-shadow: 0 12px 30px rgba(0,0,0,0.06); position: relative; }
+.receipt-wrapper::before { content: 'CHAMPION VERIFIED'; position: absolute; top: 16px; right: 16px; font-family: var(--font-mono); font-size: 10px; font-weight: 800; color: var(--accent-judge); border: 1px solid var(--accent-judge); padding: 2px 6px; }
+.receipt-header { border-bottom: 2px solid var(--border-strong); padding-bottom: 20px; margin-bottom: 24px; }
+.receipt-title { font-size: 32px; font-weight: 900; letter-spacing: -0.03em; line-height: 1; margin-bottom: 8px; }
+.hash-box { font-family: var(--font-mono); font-size: 11px; background: var(--bg-subtle); padding: 12px; border: 1px solid var(--border-subtle); word-break: break-all; margin-top: 16px; }
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .docket-grid, .court-layout, .comp-grid { grid-template-columns: 1fr; }
+  .run-rail { overflow-x: auto; }
+  .rail-step { min-width: 120px; }
+}
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="brand">
+    PATCHCOURT <span class="brand-tag">v3.6</span>
+  </div>
+  <nav class="nav-group">
+    <button class="nav-btn active" onclick="switchTab('trial')">재판</button>
+    <button class="nav-btn" onclick="switchTab('evidence')">증거</button>
+    <button class="nav-btn" onclick="switchTab('comparison')">비교</button>
+    <button class="nav-btn" onclick="switchTab('receipt')">영수증</button>
+  </nav>
+</header>
+
+<div class="sub-header">
+  <div class="workspace-badge">BU01 / 브랜드-크리에이터 제안 여정</div>
+  <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">TARGET: http://localhost:4174</div>
+</div>
+
+<div class="run-rail">
+  <div class="rail-step active" id="rail-0"><span class="step-num">01</span><span class="step-label">캡처</span></div>
+  <div class="rail-step" id="rail-1"><span class="step-num">02</span><span class="step-label">재현</span></div>
+  <div class="rail-step" id="rail-2"><span class="step-num">03</span><span class="step-label">변론</span></div>
+  <div class="rail-step" id="rail-3"><span class="step-num">04</span><span class="step-label">패치</span></div>
+  <div class="rail-step" id="rail-4"><span class="step-num">05</span><span class="step-label">재심</span></div>
+  <div class="rail-step" id="rail-5"><span class="step-num">06</span><span class="step-label">승격</span></div>
+</div>
+
+<!-- SURFACES -->
+
+<!-- 1. TRIAL DASHBOARD -->
+<main id="view-trial" class="view-container active">
+  <h1 class="heading-docket">좋아졌다는 말 대신, 증거를 남깁니다.</h1>
+  <p class="subtext-docket">같은 사용자 여정을 다시 실행하고, 회귀가 없을 때만 패치를 승격합니다.</p>
+
+  <div class="docket-grid">
+    <div class="panel-box">
+      <div class="field-label">검증할 주소</div>
+      <div class="field-value">http://localhost:4174</div>
+
+      <div class="field-label">사용자 미션</div>
+      <div class="field-value" style="font-family: var(--font-sans); line-height: 1.4;">
+        브랜드로 로그인하고 US 크리에이터 John Smith를 검토한 뒤 제안 금액을 수정해 전송 준비 상태로 만드세요.
+      </div>
+
+      <button class="btn-primary" onclick="startTrial()">증거 재판 시작</button>
+      <button class="btn-secondary" onclick="start60sDemo()">60초 데모 재생</button>
+    </div>
+
+    <div class="panel-box">
+      <div class="stream-header">
+        <span>실시간 재판 기록</span>
+        <span style="font-family: var(--font-mono); font-size: 11px; font-weight: normal; color: var(--text-muted);" id="demo-timer">LIVE LOG</span>
+      </div>
+      <div class="log-list" id="log-stream">
+        <div class="log-item"><span class="log-time">10:00:01</span><span>대기 중: '증거 재판 시작' 또는 '60초 데모 재생'을 누르세요.</span></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- 2. EVIDENCE COURT -->
+<main id="view-evidence" class="view-container">
+  <h1 class="heading-docket">결함은 주장으로 채택되기 전에 증명되어야 합니다.</h1>
+  <p class="subtext-docket">실황 브라우저 DOM 및 수집된 증거 핀을 기반으로 변론을 검증합니다.</p>
+
+  <div class="court-layout">
+    <div class="frame-viewport">
+      <div class="frame-mock">
+        <div class="mock-header">
+          <span>Creator Directory</span>
+          <span style="font-size: 12px; color: var(--text-muted);">US Market / John Smith</span>
+        </div>
+        <div class="mock-card">
+          <div class="pin-marker" style="top: 10px; right: 10px;" title="증거 E-01">E-01</div>
+          <div style="font-size: 11px; color: var(--text-muted);">OAuth ID (Exposed Raw Token)</div>
+          <div style="font-family: var(--font-mono); font-weight: 700; color: var(--accent-prosecution);" id="mock-oauth">usr_live_9920384711_raw_token</div>
+        </div>
+        <div class="mock-card">
+          <div class="pin-marker p2" style="bottom: 10px; right: 10px;" title="증거 E-02">E-02</div>
+          <div style="font-weight: 700;">John Smith</div>
+          <div style="font-size: 12px; color: var(--text-secondary);" id="mock-trust">구독자: 0명 | 검증 여부: TBD</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ruled-sheet">
+      <div class="argument-box prosecution">
+        <div class="arg-role prosecution"><span>검사 AI</span><span>증거 E-01 / E-02</span></div>
+        <div>원시 OAuth 식별자가 그대로 노출되어 개인정보 위험이 있으며, 크리에이터의 신뢰 근거(구독자/검증 상태)가 TBD로 비어 있어 의사결정이 불가능합니다.</div>
+      </div>
+
+      <div class="argument-box defense">
+        <div class="arg-role defense"><span>변호 AI</span><span>반론 및 인정</span></div>
+        <div>원시 OAuth 식별자 노출 결함을 인정합니다. 단, 이는 단순 레이아웃 마스킹 패치로 완벽히 해결 가능하며 핵심 여정 블로킹은 아닙니다.</div>
+      </div>
+
+      <div class="argument-box judge">
+        <div class="arg-role judge"><span>판결 엔진</span><span>최종 판결</span></div>
+        <div style="font-weight: 700;" id="court-verdict">원시 OAuth 식별자가 노출되고, 제안 판단에 필요한 신뢰 근거가 비어 있음</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- 3. COMPARISON -->
+<main id="view-comparison" class="view-container">
+  <h1 class="heading-docket">같은 여정에서 더 나은 쪽을 먼저 고릅니다.</h1>
+  <p class="subtext-docket">블라인드 상태에서 패치 전후를 비교하고 검증 통과 여부를 확인합니다.</p>
+
+  <div class="comp-grid">
+    <div class="variant-card" id="var-a">
+      <span class="variant-tag" id="tag-a">변종 A</span>
+      <div style="font-weight: 700; margin-bottom: 8px;">John Smith Profile Frame</div>
+      <div style="font-family: var(--font-mono); font-size: 12px; background: var(--bg-subtle); padding: 12px; border: 1px solid var(--border-subtle); margin-bottom: 12px;" id="desc-a">
+        ID: usr_live_9920384711<br>
+        Followers: 0<br>
+        Verified: TBD
+      </div>
+    </div>
+
+    <div class="variant-card" id="var-b">
+      <span class="variant-tag" id="tag-b">변종 B</span>
+      <div style="font-weight: 700; margin-bottom: 8px;">John Smith Profile Frame</div>
+      <div style="font-family: var(--font-mono); font-size: 12px; background: var(--bg-subtle); padding: 12px; border: 1px solid var(--border-subtle); margin-bottom: 12px;" id="desc-b">
+        ID: usr_live_****_711<br>
+        Followers: 142.5K (US Fit)<br>
+        Verified: Official Partner
+      </div>
+    </div>
+  </div>
+
+  <table class="gate-table">
+    <thead>
+      <tr>
+        <th>GATES</th>
+        <th>변종 A</th>
+        <th>변종 B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>과업 완수</td>
+        <td><span class="badge-status badge-pass">통과</span></td>
+        <td><span class="badge-status badge-pass">통과</span></td>
+      </tr>
+      <tr>
+        <td>신뢰 근거</td>
+        <td><span class="badge-status badge-fail" id="gate-a-trust">실패</span></td>
+        <td><span class="badge-status badge-pass" id="gate-b-trust">통과</span></td>
+      </tr>
+      <tr>
+        <td>개인정보</td>
+        <td><span class="badge-status badge-fail" id="gate-a-priv">실패</span></td>
+        <td><span class="badge-status badge-pass" id="gate-b-priv">통과</span></td>
+      </tr>
+      <tr>
+        <td>회귀</td>
+        <td><span class="badge-status badge-pass">통과</span></td>
+        <td><span class="badge-status badge-pass">통과</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="btn-primary" style="margin-top: 24px;" onclick="revealComparison()">패치 정체 공개</button>
+</main>
+
+<!-- 4. RECEIPT -->
+<main id="view-receipt" class="view-container">
+  <div class="receipt-wrapper">
+    <div class="receipt-header">
+      <div class="receipt-title">CHAMPION</div>
+      <div style="font-size: 14px; color: var(--text-secondary);">이 패치는 같은 여정을 통과했고, 새로운 회귀를 만들지 않았습니다.</div>
+    </div>
+
+    <div style="margin-bottom: 20px;">
+      <div class="field-label">MISSION VERIFIED</div>
+      <div style="font-weight: 700; font-size: 13px;">BU01 / 브랜드-크리에이터 제안 여정</div>
+    </div>
+
+    <table class="gate-table" style="margin-bottom: 20px;">
+      <thead>
+        <tr><th>GATE</th><th>RESULT</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>과업 완수</td><td><span class="badge-status badge-pass">통과</span></td></tr>
+        <tr><td>신뢰 근거</td><td><span class="badge-status badge-pass">통과</span></td></tr>
+        <tr><td>접근성</td><td><span class="badge-status badge-pass">통과</span></td></tr>
+        <tr><td>개인정보</td><td><span class="badge-status badge-pass">통과</span></td></tr>
+        <tr><td>회귀</td><td><span class="badge-status badge-pass">통과</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="hash-box">
+      RECEIPT HASH: sha256:8f9a2b1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0<br>
+      COMMIT: 04d82f1a (patched_trust_mask_bu01)<br>
+      TIMESTAMP: <span id="receipt-timestamp">2025-05-20T10:00:00Z</span>
+    </div>
+
+    <div style="display: flex; gap: 8px; margin-top: 24px;">
+      <button class="btn-primary" style="flex: 1;" onclick="copyReceipt()">영수증 복사</button>
+      <button class="btn-secondary" style="flex: 1; margin:0;" onclick="downloadJSON()">JSON 내려받기</button>
+    </div>
+    <button class="btn-secondary" onclick="switchTab('trial')">다시 재판하기</button>
+  </div>
+</main>
+
+<script>
+function switchTab(tabId) {
+  document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.view-container').forEach(view => view.classList.remove('active'));
+
+  const targetBtn = Array.from(document.querySelectorAll('.nav-btn')).find(b => b.textContent.trim() === (
+    tabId === 'trial' ? '재판' : tabId === 'evidence' ? '증거' : tabId === 'comparison' ? '비교' : '영수증'
+  ));
+  if(targetBtn) targetBtn.classList.add('active');
+
+  const targetView = document.getElementById('view-' + tabId);
+  if(targetView) targetView.classList.add('active');
+}
+
+function setRailStage(stageIndex) {
+  for(let i=0; i<6; i++) {
+    const el = document.getElementById('rail-' + i);
+    if(!el) continue;
+    el.classList.remove('active', 'passed');
+    if(i < stageIndex) el.classList.add('passed');
+    else if(i === stageIndex) el.classList.add('active');
+  }
+}
+
+function addLog(msg, isHighlight=false) {
+  const stream = document.getElementById('log-stream');
+  const now = new Date().toTimeString().split(' ')[0];
+  const item = document.createElement('div');
+  item.className = 'log-item' + (isHighlight ? ' highlight' : '');
+  item.innerHTML = `<span class="log-time">${now}</span><span>${msg}</span>`;
+  stream.appendChild(item);
+  stream.scrollTop = stream.scrollHeight;
+}
+
+let demoTimer = null;
+function start60sDemo() {
+  if(demoTimer) clearInterval(demoTimer);
+  switchTab('trial');
+  document.getElementById('log-stream').innerHTML = '';
+
+  const timeline = [
+    { t: 0, stage: 0, log: '60초 데모 재생 시작: Target URL 접속...', tab: 'trial' },
+    { t: 10, stage: 1, log: '여정 재현: 로그인 -> Creator Directory -> Filter US -> John Smith 선택', tab: 'trial' },
+    { t: 20, stage: 2, log: '검사 AI: 증거 E-01(OAuth 노출) 및 E-02(신뢰 근거 부재) 채택', tab: 'evidence', hl: true },
+    { t: 35, stage: 3, log: '패치 적용: 단일 원자적 패치(마스킹 & Trust Metric 주입)', tab: 'evidence' },
+    { t: 45, stage: 4, log: '재심 실행: 변종 A vs 변종 B 블라인드 비교', tab: 'comparison' },
+    { t: 55, stage: 5, log: '승격 결정: 모든 게이트 통과 (CHAMPION)', tab: 'receipt' }
+  ];
+
+  let currentSec = 0;
+  demoTimer = setInterval(() => {
+    const step = timeline.find(x => x.t === currentSec);
+    if(step) {
+      setRailStage(step.stage);
+      addLog(step.log, step.hl);
+      if(step.tab) switchTab(step.tab);
+      if(step.stage === 3) {
+        document.getElementById('mock-oauth').textContent = 'usr_live_****_711';
+        document.getElementById('mock-trust').textContent = '구독자: 142.5K | 검증 여부: Official Partner';
+      }
+      if(step.stage === 4) {
+        revealComparison();
+      }
+    }
+    document.getElementById('demo-timer').textContent = `DEMO RUNNING: ${currentSec}s / 60s`;
+    currentSec++;
+    if(currentSec > 60) {
+      clearInterval(demoTimer);
+      document.getElementById('demo-timer').textContent = 'DEMO COMPLETED';
+    }
+  }, 1000);
+}
+
+function startTrial() {
+  setRailStage(0);
+  addLog('단일 재판 시작: BU01 여정 검증 중...');
+  setTimeout(() => { setRailStage(1); addLog('여정 재현 중...'); }, 1500);
+  setTimeout(() => { setRailStage(2); switchTab('evidence'); addLog('결함 수집 완료. 증거 탭으로 이동.'); }, 3000);
+}
+
+function revealComparison() {
+  document.getElementById('var-b').classList.add('champion');
+  document.getElementById('tag-b').textContent = '변종 B (PATCHED - CHAMPION)';
+  document.getElementById('tag-b').style.background = 'var(--accent-judge-bg)';
+  document.getElementById('tag-b').style.color = 'var(--accent-judge)';
+}
+
+function copyReceipt() {
+  const json = {
+    verdict: "CHAMPION",
+    mission: "BU01 / 브랜드-크리에이터 제안 여정",
+    hash: "sha256:8f9a2b1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0",
+    commit: "04d82f1a",
+    gates: { task: "PASS", trust: "PASS", accessibility: "PASS", privacy: "PASS", regression: "PASS" }
+  };
+  navigator.clipboard.writeText(JSON.stringify(json, null, 2));
+  alert('영수증 JSON이 클립보드에 복사되었습니다.');
+}
+
+function downloadJSON() {
+  const json = {
+    verdict: "CHAMPION",
+    mission: "BU01 / 브랜드-크리에이터 제안 여정",
+    hash: "sha256:8f9a2b1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0"
+  };
+  const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'patchcourt-champion-receipt.json';
+  a.click();
+}
+
+document.getElementById('receipt-timestamp').textContent = new Date().toISOString();
+</script>
+</body>
+</html>

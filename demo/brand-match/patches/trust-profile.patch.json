@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "appId": "patchcourt-brand-match",
+  "kind": "deterministic-championship-reference-candidate",
+  "claimBoundary": "This prebuilt candidate is a deterministic fixture for replay and promotion plumbing. It is not represented as a live model-generated patch.",
+  "source": "data/incumbent.json",
+  "candidate": "data/candidate.json",
+  "facts": "data/verified-facts.json",
+  "changes": [
+    {
+      "locus": "creator.followers",
+      "intent": "Replace the seeded zero-value with a decision-useful public audience magnitude."
+    },
+    {
+      "locus": "trust.audience",
+      "intent": "Replace TBD with explicit audience location and age evidence."
+    },
+    {
+      "locus": "trust.channel",
+      "intent": "Replace raw OAuth/provider details with a verified public channel label."
+    },
+    {
+      "locus": "trust.marketFit",
+      "intent": "Translate internal matching syntax into user-facing rationale."
+    },
+    {
+      "locus": "trust.nextAction",
+      "intent": "Make the safe, reversible draft action explicit."
+    },
+    {
+      "locus": "responsive.offerAction",
+      "intent": "Keep the mobile primary action inside its container."
+    }
+  ],
+  "forbiddenEffects": [
+    "network request outside fixture origin",
+    "real offer transmission",
+    "credential collection",
+    "production or third-party mutation"
+  ]
+}

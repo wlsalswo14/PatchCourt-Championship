@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "appId": "patchcourt-brand-match",
+  "subjectId": "creator-john-smith-synthetic",
+  "verifiedAt": "2026-08-29T00:00:00.000Z",
+  "provenance": {
+    "synthetic": true,
+    "owned": true,
+    "private": false
+  },
+  "facts": [
+    {
+      "id": "creator-followers",
+      "field": "creator.followers",
+      "value": 248000,
+      "unit": "followers"
+    },
+    {
+      "id": "creator-engagement",
+      "field": "creator.engagementRate",
+      "value": 4.8,
+      "unit": "percent"
+    },
+    {
+      "id": "audience-country-us",
+      "field": "audience.country.US",
+      "value": 68,
+      "unit": "percent"
+    },
+    {
+      "id": "audience-age-18-34",
+      "field": "audience.age.18-34",
+      "value": 62,
+      "unit": "percent"
+    },
+    {
+      "id": "channel-platform",
+      "field": "channel.platform",
+      "value": "YouTube"
+    },
+    {
+      "id": "channel-public-handle",
+      "field": "channel.publicHandle",
+      "value": "@johnsmith"
+    },
+    {
+      "id": "channel-ownership",
+      "field": "channel.ownershipStatus",
+      "value": "verified"
+    },
+    {
+      "id": "recent-content-category",
+      "field": "content.recentCategory",
+      "value": "practical consumer technology"
+    },
+    {
+      "id": "campaign-target",
+      "field": "campaign.targetAudience",
+      "value": "United States consumers ages 18-34 interested in practical technology"
+    },
+    {
+      "id": "offer-starting-fee",
+      "field": "offer.recommendedStartingFeeUsd",
+      "value": 1200,
+      "unit": "USD"
+    }
+  ]
+}
+

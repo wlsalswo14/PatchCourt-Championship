@@ -1,0 +1,28 @@
+{
+  "creator": {
+    "name": "John Smith",
+    "handle": "@johnsmith",
+    "market": "US",
+    "category": "Tech & Lifestyle",
+    "followers": "0 followers",
+    "engagement": "4.8% engagement"
+  },
+  "trust": {
+    "audience": "TBD",
+    "audienceDetail": "Audience summary is not available.",
+    "channel": "youtube-oauth2",
+    "channelDetail": "connection=true",
+    "marketFit": "market == US && category=tech",
+    "marketFitDetail": "score_rule_v2: 0.82",
+    "nextAction": "Send offer",
+    "nextActionDetail": "Proceed with the default template.",
+    "providerDebug": "profile_id=114905732816421908772 · https://www.googleapis.com/oauth2/v3/userinfo",
+    "offerHeading": "Create offer",
+    "offerRationale": "This creator matched your search."
+  },
+  "offer": {
+    "message": "Hi, we love your content. Let's collaborate.",
+    "amount": "800"
+  }
+}
+

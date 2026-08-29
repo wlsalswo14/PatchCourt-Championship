@@ -1,0 +1,28 @@
+{
+  "creator": {
+    "name": "John Smith",
+    "handle": "@johnsmith",
+    "market": "US",
+    "category": "Tech & Lifestyle",
+    "followers": "248K followers",
+    "engagement": "4.8% engagement"
+  },
+  "trust": {
+    "audience": "68% United States",
+    "audienceDetail": "62% are ages 18–34; strongest audience segment is US tech buyers.",
+    "channel": "YouTube · @johnsmith",
+    "channelDetail": "Channel ownership verified; public handle checked on Aug 29, 2026.",
+    "marketFit": "Strong fit for US launch",
+    "marketFitDetail": "Audience location and recent tech content align with Northstar's campaign.",
+    "nextAction": "Review fee and prepare draft",
+    "nextActionDetail": "Start with a $1,200 draft; a separate authenticated action is required to send.",
+    "providerDebug": "",
+    "offerHeading": "Prepare a grounded offer",
+    "offerRationale": "The verified channel, US audience share, and recent tech coverage support a first conversation."
+  },
+  "offer": {
+    "message": "Hi John — your recent practical tech coverage and US audience look aligned with Northstar's launch. Would you be open to discussing a sponsored review?",
+    "amount": "1200"
+  }
+}
+

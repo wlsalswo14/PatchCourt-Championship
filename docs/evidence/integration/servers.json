@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-29T17:47:40.052Z",
+  "sourceMtime": "2026-08-29T16:33:19.194Z",
+  "fresh": {
+    "fixture": {
+      "pid": 26468,
+      "startedAt": "2026-08-29T17:47:16.814Z",
+      "origin": "http://127.0.0.1:65338"
+    },
+    "api": {
+      "pid": 27008,
+      "startedAt": "2026-08-29T17:47:17.075Z",
+      "origin": "http://127.0.0.1:65339"
+    },
+    "web": {
+      "pid": 26080,
+      "startedAt": "2026-08-29T17:47:17.642Z",
+      "origin": "http://127.0.0.1:65340"
+    },
+    "publicWeb": {
+      "pid": 9104,
+      "startedAt": "2026-08-29T17:47:18.139Z",
+      "origin": "http://127.0.0.1:65341"
+    },
+    "stoppedAt": "2026-08-29T17:47:40.052Z",
+    "runtimeRoot": "docs/evidence/integration/api-runtime-20260829174716"
+  },
+  "manifest": {
+    "taskFingerprint": "49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef",
+    "sourceSnapshotDigest": "160a425a3cbce74035a86408c76559cd4653283f7e29a1f84cf34d3abd3ae338",
+    "candidateSnapshotDigest": "6ef55295ca29af27bb02111cca3e5d30c1a57995967396250ac3caeb4196af3a",
+    "patchDigest": "e88b51327be3135c234d67496899d7d854c7520831dbc465a17b585374cab9b4",
+    "factsSha256": "c1fc28e2027abda3b717cc971f3865d0e6686ea9b82c9b38bcbd099c1787fb90"
+  },
+  "fixtureHealth": {
+    "ok": true,
+    "owned": true,
+    "effects": "none"
+  },
+  "apiCapabilities": {
+    "schemaVersion": 1,
+    "executionMode": "offline-demo",
+    "designAuthority": {
+      "provider": "google",
+      "model": "gemini-3.6-flash"
+    },
+    "runtimeModel": null,
+    "syntheticFixtureOnly": true,
+    "activeSecurityTesting": false,
+    "defaultTargetUrl": "http://127.0.0.1:4173",
+    "canonicalUserTask": "Sign in as the brand demo, open Creator Directory, search US, open John Smith, determine audience, verified channel, market fit, and next action, then change the fee to 1500 and prepare an unsent offer draft.",
+    "taskContractVersion": "pc01-v1",
+    "statuses": [
+      "created",
+      "snapshotting",
+      "observing_incumbent",
+      "criticizing",
+      "compiling_feedback",
+      "patching_candidate",
+      "observing_candidate",
+      "deterministic_gates",
+      "blind_comparison",
+      "promoted",
+      "rejected",
+      "invalid"
+    ],
+    "streams": [
+      "server-sent-events"
+    ],
+    "eventStream": {
+      "transport": "server-sent-events",
+      "urlTemplate": "/api/runs/{runId}/events",
+      "namedEvents": [
+        "run_created",
+        "stage_started",
+        "stage_completed",
+        "evidence_collected",
+        "findings_compiled",
+        "patch_applied",
+        "gates_evaluated",
+        "comparison_completed",
+        "run_terminal",
+        "receipt_ready"
+      ],
+      "heartbeatSeconds": 15
+    },
+    "receiptEndpointTemplate": "/api/runs/{runId}/receipt",
+    "receipts": [
+      "pc01-canonical",
+      "sha256-chain-v1"
+    ],
+    "claimBoundary": "Deterministic recorded/reference candidate replay; no claim of live AI patch generation"
+  },
+  "staleDefault4173": {
+    "inspectedReadOnly": true,
+    "reused": false,
+    "reachable": true,
+    "status": 200,
+    "body": {
+      "schemaVersion": 1,
+      "appId": "patchcourt-brand-match",
+      "owned": true,
+      "safety": {
+        "loopbackOnly": true,
+        "realCredentialsAccepted": false,
+        "privateDataAccepted": false,
+        "externalEffects": false
+      },
+      "sourceSnapshotDigest": "160a425a3cbce74035a86408c76559cd4653283f7e29a1f84cf34d3abd3ae338",
+      "candidateSnapshotDigest": "6ef55295ca29af27bb02111cca3e5d30c1a57995967396250ac3caeb4196af3a",
+      "patchDigest": "e88b51327be3135c234d67496899d7d854c7520831dbc465a17b585374cab9b4",
+      "variants": {
+        "incumbent": "/incumbent",
+        "candidate": "/candidate"
+      },
+      "task": {
+        "id": "pc01-creator-discovery-offer-draft",
+        "title": "Find a credible US creator and prepare a safe offer draft",
+        "steps": [
+          {
+            "id": "login",
+            "instruction": "Sign in with the brand demo account",
+            "actions": [
+              {
+                "kind": "click",
+                "selector": "[data-testid='demo-login']"
+              },
+              {
+                "kind": "assertVisible",
+                "selector": "[data-testid='home-heading']"
+              }
+            ],
+            "capture": true
+          },
+          {
+            "id": "directory",
+            "instruction": "Open Creator Directory",
+            "actions": [
+              {
+                "kind": "click",
+                "selector": "[data-testid='open-directory']"
+              },
+              {
+                "kind": "assertVisible",
+                "selector": "[data-testid='creator-search']"
+              }
+            ],
+            "capture": true
+          },
+          {
+            "id": "search",
+            "instruction": "Search for US",
+            "actions": [
+              {
+                "kind": "fill",
+                "selector": "[data-testid='creator-search']",
+                "value": "US"
+              },
+              {
+                "kind": "click",
+                "selector": "[data-testid='search-submit']"
+              },
+              {
+                "kind": "assertVisible",
+                "selector": "[data-testid='creator-result']"
+              }
+            ],
+            "capture": true
+          },
+          {
+            "id": "profile",
+            "instruction": "Open John Smith",
+            "actions": [
+              {
+                "kind": "click",
+                "selector": "[data-testid='open-john-smith']"
+              },
+              {
+                "kind": "assertVisible",
+                "selector": "[data-testid='profile-heading']"
+              }
+            ],
+            "capture": true
+          },
+          {
+            "id": "inspect",
+            "instruction": "Determine audience, verified channel, US-market fit, and next action",
+            "actions": [
+              {
+                "kind": "assertVisible",
+                "selector": "[data-evidence-key='audience']"
+              },
+              {
+                "kind": "assertVisible",
+                "selector": "[data-evidence-key='channel']"
+              },
+              {
+                "kind": "assertVisible",
+                "selector": "[data-evidence-key='market-fit']"
+              },
+              {
+                "kind": "assertVisible",
+                "selector": "[data-evidence-key='next-action']"
+              }
+            ],
+            "capture": true
+          },
+          {
+            "id": "offer",
+            "instruction": "Change the fee to 1500 and prepare the draft",
+            "actions": [
+              {
+                "kind": "click",
+                "selector": "[data-testid='open-offer']"
+              },
+              {
+                "kind": "assertEditable",
+                "selector": "[data-testid='offer-message']"
+              },
+              {
+                "kind": "assertEditable",
+                "selector": "[data-testid='offer-amount']"
+              },
+              {
+                "kind": "fill",
+                "selector": "[data-testid='offer-amount']",
+                "value": "1500"
+              },
+              {
+                "kind": "click",
+                "selector": "[data-testid='prepare-offer']"
+              }
+            ],
+            "capture": true
+          },
+          {
+            "id": "confirm",
+            "instruction": "Confirm the offer remains an unsent draft",
+            "actions": [
+              {
+                "kind": "assertVisible",
+                "selector": "[data-testid='draft-status']"
+              }
+            ],
+            "capture": true
+          }
+        ]
+      },
+      "taskFingerprint": "49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef",
+      "criticalInvariants": [
+        {
+          "id": "owned_local_target",
+          "category": "security",
+          "description": "Target is owned and loopback-only"
+        },
+        {
+          "id": "same_task_fingerprint",
+          "category": "security",
+          "description": "Both variants replay the exact same task"
+        },
+        {
+          "id": "brand_demo_login",
+          "category": "functionality",
+          "description": "Brand demo login succeeds"
+        },
+        {
+          "id": "directory_search",
+          "category": "functionality",
+          "description": "US search returns John Smith"
+        },
+        {
+          "id": "profile_open",
+          "category": "functionality",
+          "description": "John Smith profile opens"
+        },
+        {
+          "id": "decision_evidence_complete",
+          "category": "functionality",
+          "description": "Audience, verified channel, market fit, and next action are visible"
+        },
+        {
+          "id": "offer_fields_editable",
+          "category": "functionality",
+          "description": "Message and fee stay editable"
+        },
+        {
+          "id": "draft_not_sent",
+          "category": "security",
+          "description": "Offer action only prepares a local draft"
+        },
+        {
+          "id": "no_internal_identifier_exposure",
+          "category": "privacy",
+          "description": "No opaque provider ID, secret, token, or internal URL is rendered"
+        },
+        {
+          "id": "accessible_primary_controls",
+          "category": "accessibility",
+          "description": "Primary journey controls have accessible names"
+        },
+        {
+          "id": "responsive_primary_action",
+          "category": "responsive",
+          "description": "Mobile has no document overflow or clipped primary action"
+        },
+        {
+          "id": "console_and_network_clean",
+          "category": "security",
+          "description": "No relevant console error and no cross-origin request"
+        },
+        {
+          "id": "artifact_integrity",
+          "category": "security",
+          "description": "Recorded evidence hashes verify"
+        }
+      ]
+    }
+  },
+  "testExit": {
+    "code": 0,
+    "signal": null
+  },
+  "serverLogs": {
+    "fixture": [
+      "stdout: PatchCourt owned demo listening on http://127.0.0.1:65338"
+    ],
+    "api": [
+      "stdout: PatchCourt API listening on http://127.0.0.1:65339"
+    ],
+    "web": [
+      "stdout:   \u001b[32m\u001b[1mVITE\u001b[22m v8.2.2\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m305\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m",
+      "stdout:   \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m65340\u001b[22m/\u001b[39m"
+    ],
+    "publicWeb": [
+      "stdout:   \u001b[32m\u001b[1mVITE\u001b[22m v8.2.2\u001b[39m  \u001b[2mready in \u001b[0m\u001b[1m337\u001b[22m\u001b[2m\u001b[0m ms\u001b[22m",
+      "stdout:   \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://127.0.0.1:\u001b[1m65341\u001b[22m/\u001b[39m"
+    ]
+  }
+}

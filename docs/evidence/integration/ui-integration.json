@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-08-29T17:47:39.737Z",
+  "browser": "chromium",
+  "browserPluginAvailable": false,
+  "browserFallback": "regular Playwright",
+  "visualResults": [
+    {
+      "viewport": {
+        "name": "desktop",
+        "width": 1280,
+        "height": 720
+      },
+      "initialLayout": {
+        "viewportWidth": 1280,
+        "scrollWidth": 1280,
+        "bodyScrollWidth": 1280
+      },
+      "sealedSources": [
+        "/evidence/arm-a-profile.png",
+        "/evidence/arm-b-profile.png"
+      ]
+    },
+    {
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "initialLayout": {
+        "viewportWidth": 390,
+        "scrollWidth": 390,
+        "bodyScrollWidth": 390
+      },
+      "sealedSources": [
+        "/evidence/arm-a-profile.png",
+        "/evidence/arm-b-profile.png"
+      ]
+    }
+  ],
+  "replay": {
+    "displayedTimeline": "00:00–01:00",
+    "compressedElapsedMs": 5062
+  },
+  "live": {
+    "runId": "pc01-244db672-3ce7-4681-b68f-fd6003cce39c",
+    "receiptId": "receipt-576ed3afc9820aacf3e7b125",
+    "decision": "promote",
+    "execution": {
+      "mode": "offline-demo",
+      "criticProvider": "patchcourt:three-role-metric-critics-v1",
+      "patchProvider": "patchcourt:prebuilt-reference-candidate-v1",
+      "judgeProvider": "patchcourt:paired-outcome-v1",
+      "model": null
+    },
+    "criticProvenanceDigest": "e59a2c56ff1abe95f8912995c084461fe5765df53cc8b3f22aeb6aba60e180d5",
+    "taskFingerprint": "49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef",
+    "factsSha256": "c1fc28e2027abda3b717cc971f3865d0e6686ea9b82c9b38bcbd099c1787fb90",
+    "payloadSha256": "8c1f78478f4392e00a9aea36586fbda48a5cd57b91bcf610cb27f05cf8b5e60a"
+  },
+  "checks": {
+    "unicodeClean": true,
+    "desktopAndMobileNoOverflow": true,
+    "neutralPreRevealAssetUrlsAndDom": true,
+    "orderCommitmentDisplayed": true,
+    "livePendingHasNoRecordedFindingsOrScores": true,
+    "liveReceiptSchemaAndCanonicalHash": true,
+    "demoEndpointReturnsCanonicalReceipt": true,
+    "manifestUnchangedAcrossLiveRun": true,
+    "consoleAndNetworkClean": true,
+    "telemetryHasNoLocalAbsolutePaths": true,
+    "accessibilitySnapshotsCaptured": true,
+    "publicStaticMakesZeroApiRequestsAndDisablesLive": true
+  }
+}

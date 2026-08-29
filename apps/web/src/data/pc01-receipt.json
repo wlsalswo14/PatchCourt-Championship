@@ -1,0 +1,715 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "receipt-pc01-20260829165215",
+  "runId": "pc01-20260829165215",
+  "benchmarkId": "PC01",
+  "appId": "patchcourt-brand-match",
+  "taskFingerprint": "49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef",
+  "createdAt": "2026-08-29T16:52:15.824Z",
+  "target": {
+    "origin": "http://127.0.0.1:42873",
+    "owned": true,
+    "loopbackOnly": true,
+    "externalRequestsBlocked": true
+  },
+  "source": {
+    "incumbentSha256": "160a425a3cbce74035a86408c76559cd4653283f7e29a1f84cf34d3abd3ae338",
+    "candidateSha256": "6ef55295ca29af27bb02111cca3e5d30c1a57995967396250ac3caeb4196af3a",
+    "patchSha256": "e88b51327be3135c234d67496899d7d854c7520831dbc465a17b585374cab9b4",
+    "factsSha256": "c1fc28e2027abda3b717cc971f3865d0e6686ea9b82c9b38bcbd099c1787fb90"
+  },
+  "execution": {
+    "mode": "offline-demo",
+    "criticProvider": "patchcourt:browser-metrics-v1",
+    "patchProvider": "patchcourt:owned-fixture-reference-candidate-v1",
+    "judgeProvider": "patchcourt:deterministic-blind-scorecard-v1",
+    "model": null
+  },
+  "criticProvenance": {
+    "entries": [
+      {
+        "criticId": "patchcourt:browser-decision-evidence-critic-v1",
+        "proposedCount": 1,
+        "acceptedCount": 1,
+        "rejectedCount": 0
+      },
+      {
+        "criticId": "patchcourt:browser-privacy-critic-v1",
+        "proposedCount": 1,
+        "acceptedCount": 1,
+        "rejectedCount": 0
+      },
+      {
+        "criticId": "patchcourt:browser-responsive-critic-v1",
+        "proposedCount": 1,
+        "acceptedCount": 1,
+        "rejectedCount": 0
+      }
+    ],
+    "acceptedCriticIdsDigest": "12feae29fc4fb6d12a2c89588670d933b0954a5ad89ea9e2050c0908faff1b35",
+    "digest": "e02eb16a9b680b004b52cded5b5b9763e42d5388a1192648b7955c1aa70e18d6"
+  },
+  "artifacts": [
+    {
+      "id": "incumbent-desktop-profile",
+      "kind": "screenshot",
+      "label": "incumbent desktop profile evidence",
+      "uri": "docs/evidence/latest/incumbent-desktop-profile.png",
+      "sha256": "fa1ef9989a364c8cb333908193f59d7095b7cda2e869883355162ede00d137c1",
+      "stepId": "inspect",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-desktop-accessibility",
+      "kind": "accessibility",
+      "label": "incumbent desktop accessible-name and responsive snapshot",
+      "uri": "docs/evidence/latest/incumbent-desktop-accessibility.json",
+      "sha256": "55ae74a17d8ffad378e6b49e71b6e2241a3c8487f035ae6fe367ba9029bd5df8",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-desktop-draft",
+      "kind": "screenshot",
+      "label": "incumbent desktop unsent offer draft",
+      "uri": "docs/evidence/latest/incumbent-desktop-draft.png",
+      "sha256": "799087d2d33a2e74a9e949b4947d148b82bca9bcf5993e0f1b63d591a34ba361",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-desktop-dom",
+      "kind": "dom",
+      "label": "incumbent desktop sanitized DOM summary",
+      "uri": "docs/evidence/latest/incumbent-desktop-dom.json",
+      "sha256": "5c02f94b1bd53fd38154fbec15365ab0a4e9b52fa92b05dd0e504d33370631f0",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-desktop-console",
+      "kind": "console",
+      "label": "incumbent desktop console observations",
+      "uri": "docs/evidence/latest/incumbent-desktop-console.json",
+      "sha256": "72b225aa3571b5e90ac6ffe3ce2f14dcf92acd7ab4756ca9a441c4bdd16780c0",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-desktop-network",
+      "kind": "network",
+      "label": "incumbent desktop origin and method observations",
+      "uri": "docs/evidence/latest/incumbent-desktop-network.json",
+      "sha256": "abd98ce3f7d682ff34f2ec2a38b7e9e03615e478c98ff1ed6c0f92db140c680c",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-mobile-profile",
+      "kind": "screenshot",
+      "label": "incumbent mobile profile evidence",
+      "uri": "docs/evidence/latest/incumbent-mobile-profile.png",
+      "sha256": "b1882c05a3d780ad4940693fd009c3f18b635644ed122de95826ef436a2e3f96",
+      "stepId": "inspect",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-mobile-accessibility",
+      "kind": "accessibility",
+      "label": "incumbent mobile accessible-name and responsive snapshot",
+      "uri": "docs/evidence/latest/incumbent-mobile-accessibility.json",
+      "sha256": "72684f6e85ba3666e4751bf28837214da910f1aaa8e2c25885e64ecf9af98175",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-mobile-draft",
+      "kind": "screenshot",
+      "label": "incumbent mobile unsent offer draft",
+      "uri": "docs/evidence/latest/incumbent-mobile-draft.png",
+      "sha256": "32813dc1cffd8ae4b348113d8194c84d36c40af95a2ed50ded28a8e6f75da2a9",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-mobile-dom",
+      "kind": "dom",
+      "label": "incumbent mobile sanitized DOM summary",
+      "uri": "docs/evidence/latest/incumbent-mobile-dom.json",
+      "sha256": "1d54d004fcfe3bb49be9cb3d98ad4cc9c8778d2fc865aa8dccba7c844bb5b5d0",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-mobile-console",
+      "kind": "console",
+      "label": "incumbent mobile console observations",
+      "uri": "docs/evidence/latest/incumbent-mobile-console.json",
+      "sha256": "72b225aa3571b5e90ac6ffe3ce2f14dcf92acd7ab4756ca9a441c4bdd16780c0",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "incumbent-mobile-network",
+      "kind": "network",
+      "label": "incumbent mobile origin and method observations",
+      "uri": "docs/evidence/latest/incumbent-mobile-network.json",
+      "sha256": "abd98ce3f7d682ff34f2ec2a38b7e9e03615e478c98ff1ed6c0f92db140c680c",
+      "stepId": "confirm",
+      "variant": "incumbent",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-desktop-profile",
+      "kind": "screenshot",
+      "label": "candidate desktop profile evidence",
+      "uri": "docs/evidence/latest/candidate-desktop-profile.png",
+      "sha256": "78372d705ca86403f07861a3b69e8f2de6534fc6c3d5112e7f1ae8a87740c944",
+      "stepId": "inspect",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-desktop-accessibility",
+      "kind": "accessibility",
+      "label": "candidate desktop accessible-name and responsive snapshot",
+      "uri": "docs/evidence/latest/candidate-desktop-accessibility.json",
+      "sha256": "a29cb94cfc88f0e03bf81afc8ab9598978cfb18a96aa176b2cb49d11d909afea",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-desktop-draft",
+      "kind": "screenshot",
+      "label": "candidate desktop unsent offer draft",
+      "uri": "docs/evidence/latest/candidate-desktop-draft.png",
+      "sha256": "6b07120210d95ac89d202eee7d4299d7fee45d65d71ccfdc17b246b61904bb4a",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-desktop-dom",
+      "kind": "dom",
+      "label": "candidate desktop sanitized DOM summary",
+      "uri": "docs/evidence/latest/candidate-desktop-dom.json",
+      "sha256": "dac5da9c52723e7246143bad8d14c9f9c9dfdb409cc53e41fa414fec48ed1220",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-desktop-console",
+      "kind": "console",
+      "label": "candidate desktop console observations",
+      "uri": "docs/evidence/latest/candidate-desktop-console.json",
+      "sha256": "72b225aa3571b5e90ac6ffe3ce2f14dcf92acd7ab4756ca9a441c4bdd16780c0",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-desktop-network",
+      "kind": "network",
+      "label": "candidate desktop origin and method observations",
+      "uri": "docs/evidence/latest/candidate-desktop-network.json",
+      "sha256": "3235ab1e8205ab1f35d2ec29f6418d5ce3a1715a8bacd4f7264d634c42ac390c",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-mobile-profile",
+      "kind": "screenshot",
+      "label": "candidate mobile profile evidence",
+      "uri": "docs/evidence/latest/candidate-mobile-profile.png",
+      "sha256": "0ea83a0f771d21980e306af65fc9c5052234025b8671d0d1e162eb79494530c5",
+      "stepId": "inspect",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-mobile-accessibility",
+      "kind": "accessibility",
+      "label": "candidate mobile accessible-name and responsive snapshot",
+      "uri": "docs/evidence/latest/candidate-mobile-accessibility.json",
+      "sha256": "a765bc70c3e059d5942fbe880ce1d8a92bcd4b58684b49edd153621df73dcd5f",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-mobile-draft",
+      "kind": "screenshot",
+      "label": "candidate mobile unsent offer draft",
+      "uri": "docs/evidence/latest/candidate-mobile-draft.png",
+      "sha256": "3394162196f3c041c0cfaf93a76d819d6e9e6ebcda3065ec3583c2ecd29b4b9e",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-mobile-dom",
+      "kind": "dom",
+      "label": "candidate mobile sanitized DOM summary",
+      "uri": "docs/evidence/latest/candidate-mobile-dom.json",
+      "sha256": "f26704212959221265e5755d9ac655711fe74e1cd270498957964d5a609a49c8",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-mobile-console",
+      "kind": "console",
+      "label": "candidate mobile console observations",
+      "uri": "docs/evidence/latest/candidate-mobile-console.json",
+      "sha256": "72b225aa3571b5e90ac6ffe3ce2f14dcf92acd7ab4756ca9a441c4bdd16780c0",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    },
+    {
+      "id": "candidate-mobile-network",
+      "kind": "network",
+      "label": "candidate mobile origin and method observations",
+      "uri": "docs/evidence/latest/candidate-mobile-network.json",
+      "sha256": "3235ab1e8205ab1f35d2ec29f6418d5ce3a1715a8bacd4f7264d634c42ac390c",
+      "stepId": "confirm",
+      "variant": "candidate",
+      "capturedAt": "2026-08-29T16:52:15.824Z"
+    }
+  ],
+  "evaluations": {
+    "incumbent": {
+      "variant": "incumbent",
+      "score": 40,
+      "metrics": {
+        "taskComplete": true,
+        "decisionEvidenceCount": 0,
+        "decisionEvidenceTarget": 4,
+        "internalIdentifierCount": 4,
+        "externalRequestCount": 0,
+        "effectRequestCount": 0,
+        "accessiblePrimaryControls": true,
+        "horizontalOverflowPixels": 104,
+        "consoleErrorCount": 0,
+        "offerEditable": true,
+        "draftOnly": true
+      },
+      "gates": [
+        {
+          "id": "owned_local_target",
+          "critical": true,
+          "passed": true,
+          "observation": "owned=true; origin=http://127.0.0.1:42873",
+          "artifactIds": []
+        },
+        {
+          "id": "same_task_fingerprint",
+          "critical": true,
+          "passed": true,
+          "observation": "authoritative manifest task=49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef; both viewport replays matched",
+          "artifactIds": []
+        },
+        {
+          "id": "brand_demo_login",
+          "critical": true,
+          "passed": true,
+          "observation": "Both viewports reached the signed-in journey",
+          "artifactIds": []
+        },
+        {
+          "id": "directory_search",
+          "critical": true,
+          "passed": true,
+          "observation": "US returned John Smith at both viewports",
+          "artifactIds": []
+        },
+        {
+          "id": "profile_open",
+          "critical": true,
+          "passed": true,
+          "observation": "John Smith profile rendered at both viewports",
+          "artifactIds": [
+            "incumbent-desktop-profile",
+            "incumbent-desktop-accessibility",
+            "incumbent-desktop-draft",
+            "incumbent-desktop-dom",
+            "incumbent-desktop-console",
+            "incumbent-desktop-network",
+            "incumbent-mobile-profile",
+            "incumbent-mobile-accessibility",
+            "incumbent-mobile-draft",
+            "incumbent-mobile-dom",
+            "incumbent-mobile-console",
+            "incumbent-mobile-network"
+          ]
+        },
+        {
+          "id": "decision_evidence_complete",
+          "critical": true,
+          "passed": false,
+          "observation": "0/4 required signals were explicit",
+          "artifactIds": [
+            "incumbent-desktop-profile",
+            "incumbent-desktop-accessibility",
+            "incumbent-desktop-draft",
+            "incumbent-desktop-dom",
+            "incumbent-desktop-console",
+            "incumbent-desktop-network",
+            "incumbent-mobile-profile",
+            "incumbent-mobile-accessibility",
+            "incumbent-mobile-draft",
+            "incumbent-mobile-dom",
+            "incumbent-mobile-console",
+            "incumbent-mobile-network"
+          ]
+        },
+        {
+          "id": "offer_fields_editable",
+          "critical": true,
+          "passed": true,
+          "observation": "Message and fee accepted browser edits",
+          "artifactIds": []
+        },
+        {
+          "id": "draft_not_sent",
+          "critical": true,
+          "passed": true,
+          "observation": "Rendered status says draft ready and not sent; effect requests=0",
+          "artifactIds": [
+            "incumbent-desktop-profile",
+            "incumbent-desktop-accessibility",
+            "incumbent-desktop-draft",
+            "incumbent-desktop-dom",
+            "incumbent-desktop-console",
+            "incumbent-desktop-network",
+            "incumbent-mobile-profile",
+            "incumbent-mobile-accessibility",
+            "incumbent-mobile-draft",
+            "incumbent-mobile-dom",
+            "incumbent-mobile-console",
+            "incumbent-mobile-network"
+          ]
+        },
+        {
+          "id": "no_internal_identifier_exposure",
+          "critical": true,
+          "passed": false,
+          "observation": "4 opaque provider/debug patterns rendered",
+          "artifactIds": [
+            "incumbent-desktop-profile",
+            "incumbent-desktop-accessibility",
+            "incumbent-desktop-draft",
+            "incumbent-desktop-dom",
+            "incumbent-desktop-console",
+            "incumbent-desktop-network",
+            "incumbent-mobile-profile",
+            "incumbent-mobile-accessibility",
+            "incumbent-mobile-draft",
+            "incumbent-mobile-dom",
+            "incumbent-mobile-console",
+            "incumbent-mobile-network"
+          ]
+        },
+        {
+          "id": "accessible_primary_controls",
+          "critical": true,
+          "passed": true,
+          "observation": "Role/name and label locators resolved for every primary control",
+          "artifactIds": []
+        },
+        {
+          "id": "responsive_primary_action",
+          "critical": true,
+          "passed": false,
+          "observation": "maximum document overflow=104px",
+          "artifactIds": [
+            "incumbent-desktop-profile",
+            "incumbent-desktop-accessibility",
+            "incumbent-desktop-draft",
+            "incumbent-desktop-dom",
+            "incumbent-desktop-console",
+            "incumbent-desktop-network",
+            "incumbent-mobile-profile",
+            "incumbent-mobile-accessibility",
+            "incumbent-mobile-draft",
+            "incumbent-mobile-dom",
+            "incumbent-mobile-console",
+            "incumbent-mobile-network"
+          ]
+        },
+        {
+          "id": "console_and_network_clean",
+          "critical": true,
+          "passed": true,
+          "observation": "console errors=0; cross-origin requests=0",
+          "artifactIds": []
+        },
+        {
+          "id": "artifact_integrity",
+          "critical": true,
+          "passed": true,
+          "observation": "Artifact bytes were hashed immediately after capture",
+          "artifactIds": [
+            "incumbent-desktop-profile",
+            "incumbent-desktop-accessibility",
+            "incumbent-desktop-draft",
+            "incumbent-desktop-dom",
+            "incumbent-desktop-console",
+            "incumbent-desktop-network",
+            "incumbent-mobile-profile",
+            "incumbent-mobile-accessibility",
+            "incumbent-mobile-draft",
+            "incumbent-mobile-dom",
+            "incumbent-mobile-console",
+            "incumbent-mobile-network"
+          ]
+        }
+      ]
+    },
+    "candidate": {
+      "variant": "candidate",
+      "score": 100,
+      "metrics": {
+        "taskComplete": true,
+        "decisionEvidenceCount": 4,
+        "decisionEvidenceTarget": 4,
+        "internalIdentifierCount": 0,
+        "externalRequestCount": 0,
+        "effectRequestCount": 0,
+        "accessiblePrimaryControls": true,
+        "horizontalOverflowPixels": 0,
+        "consoleErrorCount": 0,
+        "offerEditable": true,
+        "draftOnly": true
+      },
+      "gates": [
+        {
+          "id": "owned_local_target",
+          "critical": true,
+          "passed": true,
+          "observation": "owned=true; origin=http://127.0.0.1:42873",
+          "artifactIds": []
+        },
+        {
+          "id": "same_task_fingerprint",
+          "critical": true,
+          "passed": true,
+          "observation": "authoritative manifest task=49b3dd5a1edf7a6b2c77e9c49c4f999c34b3e040093203508e1bdffa87a352ef; both viewport replays matched",
+          "artifactIds": []
+        },
+        {
+          "id": "brand_demo_login",
+          "critical": true,
+          "passed": true,
+          "observation": "Both viewports reached the signed-in journey",
+          "artifactIds": []
+        },
+        {
+          "id": "directory_search",
+          "critical": true,
+          "passed": true,
+          "observation": "US returned John Smith at both viewports",
+          "artifactIds": []
+        },
+        {
+          "id": "profile_open",
+          "critical": true,
+          "passed": true,
+          "observation": "John Smith profile rendered at both viewports",
+          "artifactIds": [
+            "candidate-desktop-profile",
+            "candidate-desktop-accessibility",
+            "candidate-desktop-draft",
+            "candidate-desktop-dom",
+            "candidate-desktop-console",
+            "candidate-desktop-network",
+            "candidate-mobile-profile",
+            "candidate-mobile-accessibility",
+            "candidate-mobile-draft",
+            "candidate-mobile-dom",
+            "candidate-mobile-console",
+            "candidate-mobile-network"
+          ]
+        },
+        {
+          "id": "decision_evidence_complete",
+          "critical": true,
+          "passed": true,
+          "observation": "4/4 required signals were explicit",
+          "artifactIds": [
+            "candidate-desktop-profile",
+            "candidate-desktop-accessibility",
+            "candidate-desktop-draft",
+            "candidate-desktop-dom",
+            "candidate-desktop-console",
+            "candidate-desktop-network",
+            "candidate-mobile-profile",
+            "candidate-mobile-accessibility",
+            "candidate-mobile-draft",
+            "candidate-mobile-dom",
+            "candidate-mobile-console",
+            "candidate-mobile-network"
+          ]
+        },
+        {
+          "id": "offer_fields_editable",
+          "critical": true,
+          "passed": true,
+          "observation": "Message and fee accepted browser edits",
+          "artifactIds": []
+        },
+        {
+          "id": "draft_not_sent",
+          "critical": true,
+          "passed": true,
+          "observation": "Rendered status says draft ready and not sent; effect requests=0",
+          "artifactIds": [
+            "candidate-desktop-profile",
+            "candidate-desktop-accessibility",
+            "candidate-desktop-draft",
+            "candidate-desktop-dom",
+            "candidate-desktop-console",
+            "candidate-desktop-network",
+            "candidate-mobile-profile",
+            "candidate-mobile-accessibility",
+            "candidate-mobile-draft",
+            "candidate-mobile-dom",
+            "candidate-mobile-console",
+            "candidate-mobile-network"
+          ]
+        },
+        {
+          "id": "no_internal_identifier_exposure",
+          "critical": true,
+          "passed": true,
+          "observation": "0 opaque provider/debug patterns rendered",
+          "artifactIds": [
+            "candidate-desktop-profile",
+            "candidate-desktop-accessibility",
+            "candidate-desktop-draft",
+            "candidate-desktop-dom",
+            "candidate-desktop-console",
+            "candidate-desktop-network",
+            "candidate-mobile-profile",
+            "candidate-mobile-accessibility",
+            "candidate-mobile-draft",
+            "candidate-mobile-dom",
+            "candidate-mobile-console",
+            "candidate-mobile-network"
+          ]
+        },
+        {
+          "id": "accessible_primary_controls",
+          "critical": true,
+          "passed": true,
+          "observation": "Role/name and label locators resolved for every primary control",
+          "artifactIds": []
+        },
+        {
+          "id": "responsive_primary_action",
+          "critical": true,
+          "passed": true,
+          "observation": "maximum document overflow=0px",
+          "artifactIds": [
+            "candidate-desktop-profile",
+            "candidate-desktop-accessibility",
+            "candidate-desktop-draft",
+            "candidate-desktop-dom",
+            "candidate-desktop-console",
+            "candidate-desktop-network",
+            "candidate-mobile-profile",
+            "candidate-mobile-accessibility",
+            "candidate-mobile-draft",
+            "candidate-mobile-dom",
+            "candidate-mobile-console",
+            "candidate-mobile-network"
+          ]
+        },
+        {
+          "id": "console_and_network_clean",
+          "critical": true,
+          "passed": true,
+          "observation": "console errors=0; cross-origin requests=0",
+          "artifactIds": []
+        },
+        {
+          "id": "artifact_integrity",
+          "critical": true,
+          "passed": true,
+          "observation": "Artifact bytes were hashed immediately after capture",
+          "artifactIds": [
+            "candidate-desktop-profile",
+            "candidate-desktop-accessibility",
+            "candidate-desktop-draft",
+            "candidate-desktop-dom",
+            "candidate-desktop-console",
+            "candidate-desktop-network",
+            "candidate-mobile-profile",
+            "candidate-mobile-accessibility",
+            "candidate-mobile-draft",
+            "candidate-mobile-dom",
+            "candidate-mobile-console",
+            "candidate-mobile-network"
+          ]
+        }
+      ]
+    }
+  },
+  "blindComparison": {
+    "protocolVersion": 1,
+    "orderCommitmentSha256": "a44f51ebb8808fc2d8607aeb8d6a4b42d7a0c7ffa08bc468cfbf3fce52ed5243",
+    "status": "valid",
+    "winnerLabel": "B",
+    "revealedWinner": "candidate",
+    "mappingReveal": {
+      "A": "incumbent",
+      "B": "candidate",
+      "nonce": "GtejyrYMsacqUnjdapY5GZve"
+    },
+    "judge": {
+      "kind": "deterministic",
+      "provider": "patchcourt-local",
+      "model": "observable-outcome-comparator-v1",
+      "responseId": "09b3172ac9bbbde9994b20d30ada1a52248f5e9b845fae4b3be4467e1ffb103d",
+      "reasoningEffort": null
+    },
+    "validationRepair": {
+      "mode": "none",
+      "rejectedResponseSha256": null,
+      "invalidFields": [],
+      "digest": "af2dbff091244021c1bcab47631531181bda93d251ebcfecdc69c082b99440b4"
+    },
+    "invocationCount": 1,
+    "invalidReason": null,
+    "evaluatedAt": "2026-08-29T16:52:15.824Z"
+  },
+  "comparison": {
+    "scoreDelta": 60,
+    "decisionEvidenceDelta": 4,
+    "decision": "promote",
+    "reasons": [
+      "strict_outcome_improvement_with_all_critical_gates_passed"
+    ]
+  },
+  "lineage": {
+    "previousReceiptSha256": null
+  },
+  "integrity": {
+    "algorithm": "sha256-canonical-json-v1",
+    "payloadSha256": "1f1d1b0d437fb483a5b39b5add9a9f33e7725298a28fbc618d15d6fd2cb6bf11"
+  }
+}

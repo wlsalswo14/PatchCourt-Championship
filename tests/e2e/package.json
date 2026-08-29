@@ -1,0 +1,20 @@
+{
+  "name": "@patchcourt/e2e",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node run-default-tests.mjs",
+    "test:headed": "node run-default-tests.mjs --headed",
+    "test:path-contract": "node --test evidence-paths.contract.test.mjs",
+    "evidence:update": "node update-evidence.mjs",
+    "test:api-lifecycle": "node api-lifecycle.mjs",
+    "test:integration": "playwright test --config playwright.integration.config.mjs",
+    "test:integration:owned": "node run-integration.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1"
+  }
+}
